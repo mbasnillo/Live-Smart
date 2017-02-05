@@ -1,0 +1,31 @@
+{
+  "name": "temporary",
+  "version": "1.0.0",
+  "description": "practice for sp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "pls",
+    "help",
+    "me",
+    "i",
+    "want",
+    "to",
+    "graduate",
+    "on",
+    "time",
+    "im",
+    "going",
+    "to",
+    "die"
+  ],
+  "author": "Miles",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "path": "^0.12.7"
+  }
+}

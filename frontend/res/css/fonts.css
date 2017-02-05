@@ -1,0 +1,39 @@
+@font-face{
+	font-family: prociono;
+	src: url('fonts/Prociono-Regular.otf');
+}
+
+.prociono{
+	font-family: prociono;
+	font-size: 20px;
+}
+
+@font-face{
+	font-family: bebas;
+	src: url('fonts/BebasNeue.otf');
+}
+
+.bebas{
+	font-family: bebas;
+	font-size: 36px;
+}
+
+@font-face{
+	font-family: codebold;
+	src: url(fonts/codebold.otf);
+}
+
+.codebold{
+	font-family: codebold;
+	font-size:20px;
+}
+
+@font-face{
+	font-family: codelight;
+	src: url(fonts/codelight.otf);
+}
+
+.codebold{
+	font-family: codelight;
+	font-size:20px;
+}
