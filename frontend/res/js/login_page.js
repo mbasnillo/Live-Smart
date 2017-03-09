@@ -25,4 +25,10 @@ $(document).ready(function(){
 	function login_success(){
 		window.location.href = 'portal.html';
 	}
+
+    $('#btn_signup').click(signup);
+
+    function signup(){
+        window.location.href = 'signup.html';
+    }
 });

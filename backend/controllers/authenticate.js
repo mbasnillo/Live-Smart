@@ -44,3 +44,35 @@ exports.logout = function (req, res, next){
 
     return res.send("Successfully logged out!");
 }
+
+exports.signup = function (req, res, next){
+
+	const username = req.body.username;
+	const password = req.body.password;
+	const confirmpassword = req.body.confirmpassword;
+
+	if(!username){
+        return res.status(400).send("ERROR: Username is blank");
+    }
+
+    if(!password){
+        return res.status(400).send("ERROR: Password is blank");
+    }
+
+    if(!confirmpassword){
+        return res.status(400).send("ERROR: Confirm Password is blank");
+    }
+
+    if(password != confirmpassword){
+    	return res.status(400).send("ERROR: Passwords do not match!");
+    }else{
+    	db.query("INSERT INTO USERS(username, password) values(?, ?)", [username, password], function(err, rows){
+    		if(err){
+				return next(err);
+			}else{
+				console.log("signup successful!");
+				return res.send(rows);
+			}
+    	});
+    }
+}
