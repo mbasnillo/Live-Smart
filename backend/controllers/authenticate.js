@@ -21,14 +21,20 @@ exports.login = function (req, res, next){
         return res.status(400).send("ERROR: Password is blank");
     }
 
-	db.query("SELECT username, password FROM USERS WHERE username = ? AND password = ?", [username, password], function(err, rows){
+	db.query("SELECT username, password, is_admin FROM USERS WHERE username = ? AND password = ?", [username, password], function(err, rows){
 		if(err){
 			return next(err);
 		}
 
-		if(rows.length == 1){
+		if(rows.length){
 			console.log("user found!");
+			if(rows[0].is_admin == 0){
+				req.session.role = 'USER';
+			}else{
+				req.session.role = 'ADMIN';
+			}
 			req.session.username = rows[0].username;
+			console.log(req.session.role);
 			return res.send(rows);
 		}else{
 			return console.log("user not found!");

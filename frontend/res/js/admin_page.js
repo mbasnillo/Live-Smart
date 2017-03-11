@@ -15,6 +15,12 @@ $(document).ready(function(){
 	}
 
 	function logout_success(){
-		window.location.href = 'index.html';
+		window.location.href = '../index.html';
+	}
+
+	$('#btn_deleteUser').click(deleteUser);
+
+	function deleteUser(){
+		window.location.href = 'deleteuser.html'
 	}
 });

@@ -22,8 +22,20 @@ $(document).ready(function(){
         });
 	}
 
-	function login_success(){
-		window.location.href = 'portal.html';
+	function login_success(data){
+        var user = data[0];
+        localStorage.user = JSON.stringify(user);
+
+        if(user.is_admin == 1){
+            window.location.href = '/views/admin.html';
+        }
+        if(user.is_admin == 0){
+            window.location.href = 'portal.html';
+        }
+        
+        /*
+        window.location.href = 'portal.html';
+		*/
 	}
 
     $('#btn_signup').click(signup);
