@@ -82,3 +82,9 @@ exports.signup = function (req, res, next){
     	});
     }
 }
+
+exports.getName = function(req, res, next){
+	const username = req.session.username;
+	console.log(username + "lol");
+	return res.send(username);
+}
