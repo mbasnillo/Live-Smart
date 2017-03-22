@@ -6,13 +6,18 @@ const user = require(__dirname + '/../controllers/user');
 
 module.exports = function(router){
 
+
+	//AUTHENTICATE
 	router.post('/login', authenticate.login);
 	router.post('/logout', authenticate.logout);
 	router.put('/signup', authenticate.signup);
 	router.post('/getName', authenticate.getName);
+
+	//ADMIN
 	router.delete('/deleteUser', admin.deleteUser);
 
-	router.post('/test', user.test);
+	//USER
+	router.post('/computeCarbon', user.computeCarbon);
 
 	return router;
 };
