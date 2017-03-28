@@ -1,6 +1,12 @@
 'use strict';
 
 $(document).ready(function(){
+	$('#password').keyup(function(event){
+		if(event.keyCode == 13){
+			$("#btn_login").click();
+		}
+	});
+
 	$('#btn_login').click(login);
 
 	function login(){
@@ -32,7 +38,7 @@ $(document).ready(function(){
         if(user.is_admin == 0){
             window.location.href = 'portal.html';
         }
-        
+
         /*
         window.location.href = 'portal.html';
 		*/

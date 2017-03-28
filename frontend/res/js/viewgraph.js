@@ -11,16 +11,20 @@ $(document).ready(function(){
 		method: 'GET',
 	}).done(function(data){
 		var data2=[], i;
-		console.log(data); // REMOVE LATER
 		for(i=0; i<data.length; i++){
 			var temp=[];
-			temp.push(data[i].carbon_date);
+			var date = Date.parse(data[i].carbon_date);
+			temp.push(date);
 			temp.push(data[i].carbon_level);
 			data2.push(temp);
 		}
 
 		const username = data[0].username;
 		const title_text = "Carbon Footprints for " + username;
+		
+		Highcharts.setOptions({
+			colors: ['#2C3539', '#CD4545']
+		});
 		$('#carbongraph').highcharts({
 			chart: {
 				type: 'spline'
@@ -31,8 +35,7 @@ $(document).ready(function(){
 			xAxis: {
 				type: 'datetime',
 				dateTimeLabelFormats: {
-					month: '%e. %b',
-					year: '%b'
+					day: '%e. %b %y'
 				},
 				title: {
 					text: 'Date'
@@ -45,10 +48,15 @@ $(document).ready(function(){
 				min: 0
 			},
 			tooltip: {
-
+				headerFormat: '{point.x:%e. %b %Y}<br/>',
+				pointFormat:'<b>Computed Level:</b> {point.y}'
 			},
 			plotOptions: {
-
+				spline: {
+					marker: {
+						enabled: true
+					}
+				}
 			},
 
 			series: [{

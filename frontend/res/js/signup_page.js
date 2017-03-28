@@ -1,6 +1,12 @@
 'use strict';
 
 $(document).ready(function(){
+    $('#confirmpassword').keyup(function(event){
+		if(event.keyCode == 13){
+			$("#btn_signup").click();
+		}
+	});
+
 	$('#btn_signup').click(signup);
 
 	function signup(){
