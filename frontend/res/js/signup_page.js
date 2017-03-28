@@ -21,7 +21,7 @@ $(document).ready(function(){
             error: function(err){
                 return console.log(err, "Signup error");
             }
-        });
+      });
 	}
 
 	function signup_success(){

@@ -23,36 +23,7 @@
 
 	<div class="row">
 		<div class="small-12 columns" style="margin-top: 50px;" align="center">
-			<text class="prociono" style="font-size:36px">View your Carbon Footprint Graph</text>
-			<div id="carbongraph" style="width:100%; height:400px;">
-					<script>
-					$(function () {
-	var myChart = Highcharts.chart('carbongraph', {
-			chart: {
-					type: 'bar'
-			},
-			title: {
-					text: 'Fruit Consumption'
-			},
-			xAxis: {
-					categories: ['Apples', 'Bananas', 'Oranges']
-			},
-			yAxis: {
-					title: {
-							text: 'Fruit eaten'
-					}
-			},
-			series: [{
-					name: 'Jane',
-					data: [1, 0, 4]
-			}, {
-					name: 'John',
-					data: [5, 7, 9]
-			}]
-	});
-});
-					</script>
-			</div>
+			<div id="carbongraph" style="width:100%; height:400px;"></div>
 			<p>
 			<button type="button" class="alert button" id="btn_back" style="width:50%;"><b class="prociono">Go Back</b></button>
 			</p>
