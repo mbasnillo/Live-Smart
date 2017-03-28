@@ -34,7 +34,6 @@ exports.login = function (req, res, next){
 				req.session.role = 'ADMIN';
 			}
 			req.session.username = rows[0].username;
-			console.log(req.session.role);
 			return res.send(rows);
 		}else{
 			return console.log("user not found!");
@@ -85,6 +84,5 @@ exports.signup = function (req, res, next){
 
 exports.getName = function(req, res, next){
 	const username = req.session.username;
-	console.log(username + "lol");
 	return res.send(username);
 }
