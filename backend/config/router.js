@@ -19,6 +19,7 @@ module.exports = function(router){
 
 	//ADMIN
 	router.delete('/deleteUser', admin.deleteUser);
+	router.post('/getUserGraph', admin.getUserGraph);
 
 	//USER
 	router.post('/computeCarbon', user.computeCarbon);

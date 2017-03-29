@@ -19,3 +19,14 @@ exports.deleteUser = function (req, res, next){
 		}
 	});
 }
+
+exports.getUserGraph = function(req, res, next){
+	const username = req.body.username;
+	db.query("SELECT * from USER_CARBON WHERE username = ? ORDER BY carbon_date", [username], function(err, rows){
+    if(err){
+			return next(err);
+		}
+
+    res.send(rows);
+  });
+}

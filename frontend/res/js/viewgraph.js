@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 		const username = data[0].username;
 		const title_text = "Carbon Footprints for " + username;
-		
+
 		Highcharts.setOptions({
 			colors: ['#2C3539', '#CD4545']
 		});
