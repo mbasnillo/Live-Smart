@@ -33,7 +33,7 @@ $(document).ready(function(){
 			//$('#graph_area').highcharts({
 			var chart = new Highcharts.Chart({
 				chart: {
-					type: 'spline',
+					type: 'line',
 					renderTo: 'graph_area'
 				},
 				title: {

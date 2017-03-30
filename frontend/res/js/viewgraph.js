@@ -27,7 +27,7 @@ $(document).ready(function(){
 		});
 		$('#carbongraph').highcharts({
 			chart: {
-				type: 'spline'
+				type: 'line'
 			},
 			title: {
 				text: title_text
