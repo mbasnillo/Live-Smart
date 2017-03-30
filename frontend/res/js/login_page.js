@@ -1,11 +1,14 @@
 'use strict';
 
 $(document).ready(function(){
-	$('#password').keyup(function(event){
-		if(event.keyCode == 13){
-			$("#btn_login").click();
-		}
-	});
+    alertify.set('notifier','position', 'top-right');
+    
+    $(document).keypress(function(event){
+        if(event.keyCode == 13){
+            $('#btn_login').click();
+        }
+    });
+
 
 	$('#btn_login').click(login);
 
@@ -23,7 +26,7 @@ $(document).ready(function(){
             dataType: 'json',
             success: login_success,
             error: function(err){
-                return console.log(err, "Login error");
+                return alertify.notify(err.responseText, 'night', 2, function(){ });
             }
         });
 	}

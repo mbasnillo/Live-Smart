@@ -20,14 +20,22 @@ exports.login = function (req, res, next){
     if(!password){
         return res.status(400).send("ERROR: Password is blank");
     }
-
+	/*
 	db.query("SELECT username, password, is_admin FROM USERS WHERE username = ? AND password = ?", [username, password], function(err, rows){
+		if(err){
+			return next(err);
+		}
+	*/
+	db.query("SELECT username, password, is_admin FROM USERS WHERE username = ?", [username], function(err, rows){
 		if(err){
 			return next(err);
 		}
 
 		if(rows.length){
 			console.log("user found!");
+			if(password != rows[0].password){
+				return res.status(400).send("ERROR: Username and password do not match");
+			}
 			if(rows[0].is_admin == 0){
 				req.session.role = 'USER';
 			}else{
@@ -36,7 +44,7 @@ exports.login = function (req, res, next){
 			req.session.username = rows[0].username;
 			return res.send(rows);
 		}else{
-			return console.log("user not found!");
+			return res.status(400).send("ERROR: Username does not exist");
 		}
 	});
 }
