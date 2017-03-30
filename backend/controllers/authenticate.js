@@ -10,15 +10,15 @@ exports.login = function (req, res, next){
 	const password = req.body.password;
 
 	if(req.session.username){
-  	return res.status(400).send("LOGIN FAILED: Someone is already logged in.");
+  	return res.status(400).send("LOGIN FAILED: Someone is already logged in!");
   }
 
   if(!username){
-      return res.status(400).send("ERROR: Username is blank");
+      return res.status(400).send("ERROR: Username is blank!");
   }
 
   if(!password){
-      return res.status(400).send("ERROR: Password is blank");
+      return res.status(400).send("ERROR: Password is blank!");
   }
 
 	db.query("SELECT username, password, is_admin FROM USERS WHERE username = ?", [username], function(err, rows){
@@ -29,7 +29,7 @@ exports.login = function (req, res, next){
 		if(rows.length){
 			console.log("user found!");
 			if(password != rows[0].password){
-				return res.status(400).send("ERROR: Username and password do not match");
+				return res.status(400).send("ERROR: Username and password do not match!");
 			}
 			if(rows[0].is_admin == 0){
 				req.session.role = 'USER';
@@ -39,14 +39,14 @@ exports.login = function (req, res, next){
 			req.session.username = rows[0].username;
 			return res.send(rows);
 		}else{
-			return res.status(400).send("ERROR: Username does not exist");
+			return res.status(400).send("ERROR: Username does not exist!");
 		}
 	});
 }
 
 exports.logout = function (req, res, next){
 	if(!req.session.username){
-        return res.status(400).send("LOGOUT FAILED: Nobody is logged in.");
+        return res.status(400).send("LOGOUT FAILED: Nobody is logged in!");
     }
 	req.session.destroy();
 
@@ -60,15 +60,15 @@ exports.signup = function (req, res, next){
 	const confirmpassword = req.body.confirmpassword;
 
 	if(!username){
-      return res.status(400).send("ERROR: Username is blank");
+      return res.status(400).send("ERROR: Username is blank!");
   }
 
   if(!password){
-      return res.status(400).send("ERROR: Password is blank");
+      return res.status(400).send("ERROR: Password is blank!");
   }
 
   if(!confirmpassword){
-      return res.status(400).send("ERROR: Confirm Password is blank");
+      return res.status(400).send("ERROR: Confirm Password is blank!");
   }
 
   if(password != confirmpassword){

@@ -1,37 +1,46 @@
 'use strict';
 
 $(document).ready(function(){
+	alertify.set('notifier','position', 'top-right');
+
+	$(document).keypress(function(event){
+      if(event.keyCode == 13){
+          $('#btn_delete').click();
+      }
+  });
+
 	$('#btn_delete').click(deleteUser);
 
 	function deleteUser(){
 		const username = $('#username').val();
 		const confirmusername = $('#confirmusername').val();
 
-		if(username == confirmusername){
-            $.ajax({
-                url: '/deleteUser',
-                method: 'DELETE',
-                data: {
-                    username: username
-                },
-                dataType: 'json',
-                success: delete_success,
-                error: function(err){
-                    return console.log(err, "Signup error");
-                }
-            });
-        }else{
-            return console.log("Usernames do not match!");
+    $.ajax({
+        url: '/deleteUser',
+        method: 'DELETE',
+        data: {
+            username: username,
+            confirmusername : confirmusername
+        },
+        dataType: 'json',
+        success: function(data){
+          delete_success(data);
+        },
+        error: function(err){
+          return alertify.notify(err.responseText, 'night', 2, function(){ });
         }
+    });
 	}
 
-	function delete_success(){
-		window.location.href = 'deleteuser.html';
-	}
+  function delete_success(data){
+    alertify.notify(data.responseText, 'night', 2, function(){
+      location.reload();
+    });
+  }
 
-    $('#btn_back').click(goback);
+  $('#btn_back').click(goback);
 
-    function goback(){
-        window.location.href = 'admin.html';
-    }
+  function goback(){
+      window.location.href = 'admin.html';
+  }
 });
