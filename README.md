@@ -1,6 +1,7 @@
 # Live-Smart
 
-## Web application used to display data on carbon footprints
+## Project Description
+ Web application used to display data on carbon footprints and an environmental survey. Created as part of my Special Problem in partial fulfillment of the requirements for graduation from the UPLB BSCS curriculum.
 
 ### How to use:
 1) Clone the repository
