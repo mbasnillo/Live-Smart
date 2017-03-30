@@ -10,22 +10,17 @@ exports.login = function (req, res, next){
 	const password = req.body.password;
 
 	if(req.session.username){
-    	return res.status(400).send("LOGIN FAILED: Someone is already logged in.");
-    }
+  	return res.status(400).send("LOGIN FAILED: Someone is already logged in.");
+  }
 
-    if(!username){
-        return res.status(400).send("ERROR: Username is blank");
-    }
+  if(!username){
+      return res.status(400).send("ERROR: Username is blank");
+  }
 
-    if(!password){
-        return res.status(400).send("ERROR: Password is blank");
-    }
-	/*
-	db.query("SELECT username, password, is_admin FROM USERS WHERE username = ? AND password = ?", [username, password], function(err, rows){
-		if(err){
-			return next(err);
-		}
-	*/
+  if(!password){
+      return res.status(400).send("ERROR: Password is blank");
+  }
+
 	db.query("SELECT username, password, is_admin FROM USERS WHERE username = ?", [username], function(err, rows){
 		if(err){
 			return next(err);
@@ -65,29 +60,36 @@ exports.signup = function (req, res, next){
 	const confirmpassword = req.body.confirmpassword;
 
 	if(!username){
-        return res.status(400).send("ERROR: Username is blank");
-    }
+      return res.status(400).send("ERROR: Username is blank");
+  }
 
-    if(!password){
-        return res.status(400).send("ERROR: Password is blank");
-    }
+  if(!password){
+      return res.status(400).send("ERROR: Password is blank");
+  }
 
-    if(!confirmpassword){
-        return res.status(400).send("ERROR: Confirm Password is blank");
-    }
+  if(!confirmpassword){
+      return res.status(400).send("ERROR: Confirm Password is blank");
+  }
 
-    if(password != confirmpassword){
-    	return res.status(400).send("ERROR: Passwords do not match!");
-    }else{
-    	db.query("INSERT INTO USERS(username, password) values(?, ?)", [username, password], function(err, rows){
-    		if(err){
-				return next(err);
+  if(password != confirmpassword){
+  	return res.status(400).send("ERROR: Passwords do not match!");
+  }else{
+		db.query("SELECT username FROM USERS WHERE username = ?", [username], function(err, rows){
+			if(rows.length){
+				return res.status(400).send("ERROR: Username already exists!");
 			}else{
-				console.log("signup successful!");
-				return res.send(rows);
+				db.query("INSERT INTO USERS(username, password) values(?, ?)", [username, password], function(err, rows){
+		  		if(err){
+						return next(err);
+					}else{
+						console.log("signup successful!");
+						return res.send(rows);
+					}
+		  	});
 			}
-    	});
-    }
+		});
+
+  }
 }
 
 exports.getName = function(req, res, next){
