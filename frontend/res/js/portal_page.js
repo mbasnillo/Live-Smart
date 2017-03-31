@@ -18,6 +18,10 @@ $(document).ready(function(){
 		window.location.href = 'views/viewstats.html';
 	});
 
+	$('#btn_survey').click(function(){
+		window.location.href = 'views/survey.html';
+	})
+
 	$('#btn_viewOwn').click(function(){
 		window.location.href = 'views/viewgraph.html';
 	});

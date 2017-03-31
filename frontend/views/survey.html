@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Live Smart - View Your Graph</title>
+	<title>Live Smart - Answer the Survey</title>
 
 	<link rel="stylesheet" type="text/css" href="../res/css/page-style.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation.min.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation-icons.css">
-	<link rel="stylesheet" type="text/css" href="../res/css/alertify.min.css">
 
 	<script type="text/javascript" src="../res/js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="../res/js/alertify.min.js"></script>
-	<script type="text/javascript" src="../res/js/highcharts.js"></script>
-	<script type="text/javascript" src="../res/js/exporting.js"></script>
 </head>
 <body style="background-color:#FAFAFA">
 
@@ -24,16 +20,17 @@
 
 	<div class="row">
 		<div class="small-12 columns" style="margin-top: 50px;" align="center">
-			<b class="prociono" style="font-size:36px">Search for a User's Graph</b>
-			<input type="text" id="search_user" style="width:50%;">
-			<button type="button" class="warning button" id="btn_search" style="width:100px;"><b class="prociono">Search</b></button>
+			<text class="prociono" style="font-size:28px">Take the survey below:</text>
+			<div>
+
+			</div>
 			<p>
-				<div id="graph_area" style="width:100%; height:400px;"></div>
+			<button type="button" class="alert button" id="btn_submit" style="width:50%;"><b class="prociono">Submit</b></button>
 			<button type="button" class="alert button" id="btn_back" style="width:50%;"><b class="prociono">Go Back</b></button>
 			</p>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="../res/js/searchgraph.js"></script>
+	<script type="text/javascript" src="../res/js/survey.js"></script>
 </body>
 </html>
