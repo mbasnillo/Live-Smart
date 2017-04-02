@@ -21,16 +21,85 @@
 	<div class="row">
 		<div class="small-12 columns" style="margin-top: 50px;" align="center">
 			<text class="prociono" style="font-size:28px">Take the survey below:</text>
-			<div>
+	</div>
 
+	<div class="row">
+		<div class="small-2 columns">
+    &nbsp;
+		</div>
+
+		<div class="small-8 columns" align="center">
+			<hr />
+			<div class="row">
+				<div class="small-6 columns">
+					<label><b>Age:</b></label>
+					<div style="text-align: center;">
+						<div style="display: inline-block; text-align: center; width: 50%;">
+							<input type="text" name="age" id="form_age"/>
+						</div>
+					</div>
+				</div>
+				<div class="small-6 columns">
+					<label><b>Sex:</b></label>
+					<input type="radio" name="sex" value="Male" id="sex_male" /> <label for="sex_male">Male</label>
+					<input type="radio" name="sex" value="Female" id="sex_female" /> <label for="sex_female">Female</label>
+				</div>
+				<!--
+				<div class="small-8 columns">
+					<label><b>Civil Status:</b></label>
+					<input type="radio" name="civil_status" value="Single" id="status_single" /> <label for="status_single">Single</label>
+					<input type="radio" name="civil_status" value="Married" id="status_married" /> <label for="status_married">Married</label>
+					<input type="radio" name="civil_status" value="Separated" id="status_separated" /> <label for="status_separated">Separated</label>
+					<input type="radio" name="civil_status" value="LiveIn" id="status_livein" /> <label for="status_livein">Live-In</label>
+					<input type="radio" name="civil_status" value="Single" id="status_widowed" /> <label for="status_widowed">Widowed</label>
+				</div>
+				-->
 			</div>
-			<p>
-			<button type="button" class="alert button" id="btn_submit" style="width:50%;"><b class="prociono">Submit</b></button>
-			<button type="button" class="alert button" id="btn_back" style="width:50%;"><b class="prociono">Go Back</b></button>
-			</p>
+
+			<hr />
+			<div class="row">
+				<div class="small-6 columns">
+					<label><b>Educational Attainment:</b></label>
+					<div style="text-align: center;">
+						<div style="display: inline-block; text-align: left; width: 50%;">
+							<input type="radio" name="education" value="NoEduc" id="educ_none"/><label for="educ_none">No Formal Education</label> <br />
+							<input type="radio" name="education" value="Elementary" id="educ_elem"/><label for="educ_elem">Elementary</label> <br />
+							<input type="radio" name="education" value="HighSchool" id="educ_high"/><label for="educ_high">High School</label> <br />
+							<input type="radio" name="education" value="Bachelors" id="educ_bach"/><label for="educ_bach">Bachelor's Degree</label> <br />
+							<input type="radio" name="education" value="Masters" id="educ_mast"/><label for="educ_mast">Master's Degree</label> <br />
+							<input type="radio" name="education" value="Doctorate" id="educ_doct"/><label for="educ_doct">Doctorate Degree</label> <br />
+							<input type="radio" name="education" value="Vocational" id="educ_voca"/><label for="educ_voca">Vocational Course</label> <br />
+					</div>
+					</div>
+				</div>
+
+				<div class="small-6 columns">
+					<label><b>Monthly Salary (in php):</b></label>
+					<div style="text-align: center;">
+						<div style="display: inline-block; text-align: left; width: 50%;">
+							<input type="radio" name="salary" value="0k" id="salary_0" /><label for="salary_0">Less than P15,000</label> <br />
+							<input type="radio" name="salary" value="15k" id="salary_15" /><label for="salary_15">P15,001 to P30,000</label> <br />
+							<input type="radio" name="salary" value="30k" id="salary_30" /><label for="salary_30">P30,001 to P45,000</label> <br />
+							<input type="radio" name="salary" value="45k" id="salary_45" /><label for="salary_45">P45,001 to P60,000</label> <br />
+							<input type="radio" name="salary" value="60k" id="salary_60" /><label for="salary_60">Greater than P60,000</label> <br />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+		</div>
+
+		<div class="small-2 columns">
 		</div>
 	</div>
 
+	<div class="row">
+		<div class="small-12 columns" align="center">
+			<button type="button" class="alert button" id="btn_submit" style="width:50%;"><b class="prociono">Submit</b></button>
+			<button type="button" class="alert button" id="btn_back" style="width:50%;"><b class="prociono">Go Back</b></button>
+		</div>
+	</div>
 	<script type="text/javascript" src="../res/js/survey.js"></script>
 </body>
 </html>
