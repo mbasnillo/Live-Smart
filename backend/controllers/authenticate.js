@@ -96,3 +96,13 @@ exports.getName = function(req, res, next){
 	const username = req.session.username;
 	return res.send(username);
 }
+
+exports.checkLoggedIn = function(req, res, next){
+
+}
+
+exports.checkLoggedOut = function(req, res, next){
+	if(req.session.username){
+		return res.status(400).send("ERROR: You are already logged in!");
+	}
+}

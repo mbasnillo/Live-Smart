@@ -13,16 +13,19 @@ module.exports = function(router){
 	router.post('/logout', authenticate.logout);
 	router.put('/signup', authenticate.signup);
 	router.post('/getName', authenticate.getName);
+	router.post('/checkLoggedIn', authenticate.checkLoggedIn);
+	router.post('/checkLoggedOut', authenticate.checkLoggedOut);
 
 	//ANALYTICS
 	router.get('/getCarbonFootprints', analytics.getCarbonFootprints);
+	router.post('/getUserGraph', analytics.getUserGraph);
 
 	//ADMIN
 	router.delete('/deleteUser', admin.deleteUser);
-	router.post('/getUserGraph', admin.getUserGraph);
 
 	//USER
 	router.post('/computeCarbon', user.computeCarbon);
+	router.put('/answerSurvey', user.answerSurvey);
 
 	return router;
 };

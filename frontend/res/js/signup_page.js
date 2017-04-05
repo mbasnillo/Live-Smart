@@ -2,6 +2,16 @@
 
 $(document).ready(function(){
   alertify.set('notifier','position', 'top-right');
+  $.ajax({
+          url: '/checkLoggedOut',
+          method: 'POST',
+          success: foo,
+          error: function(err){
+            alertify.notify(err.responseText, 'night', 2, function(){ });
+            window.location.href = 'portal.html';
+          }
+      });
+  function foo(){}
 
   $(document).keypress(function(event){
       if(event.keyCode == 13){
