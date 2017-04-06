@@ -18,25 +18,24 @@ $(document).ready(function(){
     if(isNaN(age)){
       return alertify.notify("ERROR: Age must be a number!", 'night', 2, function(){ });
     }
-    console.log(age);
+    if(age < 16 || age > 100){
+      return alertify.notify("ERROR: Please enter a valid age!", 'night', 2, function(){ });
+    }
 
     var sex = $('input[name="sex"]:checked').val();
     if(!sex){
       return alertify.notify("ERROR: Sex cannot be blank!", 'night', 2, function(){ });
     }
-    console.log(sex);
 
     var education = $('input[name="education"]:checked').val();
     if(!education){
       return alertify.notify("ERROR: Education cannot be blank!", 'night', 2, function(){ });
     }
-    console.log(education);
 
     var salary = $('input[name="salary"]:checked').val();
     if(!salary){
       return alertify.notify("ERROR: Salary cannot be blank!", 'night', 2, function(){ });
     }
-    console.log(salary);
 
     var score = 0;
     for(var i = 1; i<=15; i++){
@@ -48,15 +47,36 @@ $(document).ready(function(){
       res = res * 1;
       score += res;
     }
-    console.log(score);
 
     var perception = $('input[name="perception"]:checked').val();
     if(!perception){
       return alertify.notify("ERROR: Perception cannot be blank!", 'night', 2, function(){ });
     }
-    console.log(perception);
 
-  });
+    $.ajax({
+      url: '/answerSurvey',
+      method: 'PUT',
+      data: {
+        age: age,
+        sex: sex,
+        education: education,
+        salary: salary,
+        score: score,
+        perception: perception
+      },
+      dataType: 'json',
+      success: survey_success,
+      error: function(err){
+          console.log(err);
+          return alertify.notify(err.responseText, 'night', 2, function(){ });
+      }
+    });
+
+  }); //end of btn_submit function
+
+  function survey_success(){
+    location.reload();
+  }
 
   $('#btn_back').click(function(){
 		window.location.href = '../portal.html';
