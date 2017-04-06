@@ -2,6 +2,13 @@
 
 $(document).ready(function(){
   alertify.set('notifier','position', 'top-right');
+  $.ajax({
+          url: '/checkLoggedIn',
+          method: 'POST',
+          error: function(err){
+            window.location.href = '../index.html';
+          }
+      });
 
   $('#btn_submit').click(function(){
     var age = $('#form_age').val();

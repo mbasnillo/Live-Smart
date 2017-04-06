@@ -50,7 +50,7 @@ exports.logout = function (req, res, next){
     }
 	req.session.destroy();
 
-    return res.send("Successfully logged out!");
+  return res.send("Successfully logged out!");
 }
 
 exports.signup = function (req, res, next){
@@ -98,11 +98,13 @@ exports.getName = function(req, res, next){
 }
 
 exports.checkLoggedIn = function(req, res, next){
-
+	if(!req.session.role){
+		return res.status(400).send("ERROR: Nobody is logged in!");
+	}
 }
 
 exports.checkLoggedOut = function(req, res, next){
-	if(req.session.username){
-		return res.status(400).send("ERROR: You are already logged in!");
+	if(req.session.role){
+		return res.send(req.session.role);
 	}
 }

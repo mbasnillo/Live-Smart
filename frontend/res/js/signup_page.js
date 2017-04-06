@@ -5,13 +5,18 @@ $(document).ready(function(){
   $.ajax({
           url: '/checkLoggedOut',
           method: 'POST',
-          success: foo,
+          success: redirect,
           error: function(err){
-            alertify.notify(err.responseText, 'night', 2, function(){ });
-            window.location.href = 'portal.html';
+            return console.log(err);
           }
       });
-  function foo(){}
+  function redirect(data){
+    if(data == "USER"){
+      window.location.href = 'portal.html';
+    }else if(data == "ADMIN"){
+      window.location.href = '/views/admin.html';
+    }
+  }
 
   $(document).keypress(function(event){
       if(event.keyCode == 13){

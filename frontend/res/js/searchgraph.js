@@ -2,6 +2,14 @@
 
 $(document).ready(function(){
 	alertify.set('notifier','position', 'top-right');
+	$.ajax({
+          url: '/checkLoggedIn',
+          method: 'POST',
+          error: function(err){
+            window.location.href = '../index.html';
+          }
+      });
+
 	$('#graph_area').hide();
 
 	$('#search_user').keyup(function(event){

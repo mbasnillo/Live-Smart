@@ -2,6 +2,14 @@
 
 $(document).ready(function(){
 	$.ajax({
+          url: '/checkLoggedIn',
+          method: 'POST',
+          error: function(err){
+            window.location.href = '../index.html';
+          }
+      });
+
+	$.ajax({
         url: '/getName',
         method: 'POST',
         success: writeName,

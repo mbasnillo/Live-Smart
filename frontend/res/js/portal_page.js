@@ -2,6 +2,14 @@
 
 $(document).ready(function(){
 	$.ajax({
+          url: '/checkLoggedIn',
+          method: 'POST',
+          error: function(err){
+            window.location.href = 'index.html';
+          }
+      });
+
+	$.ajax({
         url: '/getName',
         method: 'POST',
         success: writeName,
@@ -38,7 +46,7 @@ $(document).ready(function(){
             method: 'POST',
             success: logout_success,
             error: function(err){
-                return console.log(err, "Logout error");
+                window.location.href = 'index.html';
             }
         });
 	}
