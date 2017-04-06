@@ -7,6 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="../res/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation.min.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation-icons.css">
+
+	<script type="text/javascript" src="../res/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../res/js/highcharts.js"></script>
+	<script type="text/javascript" src="../res/js/exporting.js"></script>
 </head>
 <body style="background-color:#FAFAFA">
 
@@ -18,18 +22,68 @@
 
 	<div class="row">
 		<div class="small-12 columns" style="margin-top: 50px;" align="center">
-			<text class="prociono" style="font-size:36px">View All Statistics</text>
-			<div>
-				Insert statistics here
+			<text class="prociono" style="font-size:40px">Statistics</text>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="small-12 columns" align="center">
+			<text class="prociono" style="font-size:32px">General Demographic</text>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-3 columns">
+			<div id="age_graph">
+
 			</div>
+		</div>
+		<div class="small-3 columns">
+			<div id="sex_graph">
+
+			</div>
+		</div>
+		<div class="small-3 columns">
+			<div id="education_graph">
+
+			</div>
+		</div>
+		<div class="small-3 columns">
+			<div id="salary_graph">
+
+			</div>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="small-12 columns" align="center">
+			<text class="prociono" style="font-size:32px">Knowledge on Climate Change & Carbon Footprints</text>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="small-12 columns" align="center">
+			<text class="prociono" style="font-size:32px">Perception towards Climate Change</text>
+		</div>
+	</div>
+
+	<p>
+	<div class="row">
+		<div class="small-12 columns" align="center">
 			<p>
 			<button type="button" class="alert button" id="btn_back" style="width:50%;"><b class="prociono">Go Back</b></button>
 			</p>
 		</div>
 	</div>
+	</p>
 
 
-	<script type="text/javascript" src="../res/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../res/js/viewstats.js"></script>
 </body>
 </html>

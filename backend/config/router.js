@@ -19,6 +19,7 @@ module.exports = function(router){
 	//ANALYTICS
 	router.get('/getCarbonFootprints', analytics.getCarbonFootprints);
 	router.post('/getUserGraph', analytics.getUserGraph);
+	router.get('/getStatistics', analytics.getStatistics);
 
 	//ADMIN
 	router.delete('/deleteUser', admin.deleteUser);

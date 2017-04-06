@@ -32,7 +32,7 @@ $(document).ready(function(){
 		Highcharts.setOptions({
 			colors: ['#2C3539', '#CD4545']
 		});
-		$('#carbongraph').highcharts({
+		$('#carbon_graph').highcharts({
 			chart: {
 				type: 'line'
 			},
