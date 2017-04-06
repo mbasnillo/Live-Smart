@@ -22,11 +22,11 @@ DROP TABLE IF EXISTS GEN_STATS;
 CREATE TABLE GEN_STATS(
 	username VARCHAR(256) NOT NULL,
 	age INT(2) NOT NULL,
-	gender INT(2) NOT NULL,
-	education INT(2) NOT NULL,
-	salary INT(2) NOT NULL,
+	sex ENUM('male', 'female') NOT NULL,
+	education ENUM('none', 'elementary', 'highschool', 'bachelors', 'masters', 'doctorate', 'vocational') NOT NULL,
+	salary ENUM('none', '0-15', '15-30', '30-45', '45-60', '60plus') NOT NULL,
 	score INT(2) NOT NULL,
-	perception INT(2) NOT NULL,
+	perception ENUM('1', '2', '3', '4', '5') NOT NULL,
 	FOREIGN KEY (username) REFERENCES USERS(username) ON DELETE CASCADE ON UPDATE CASCADE,
 	PRIMARY KEY (username)
 );
