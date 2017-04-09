@@ -285,9 +285,24 @@ $(document).ready(function(){
             }
             ave_sal6 = ave_sal6 / score_sal6.length;
 
+
+            //GRAPHS BEGIN HERE
+
+            //SET COLORS
 		Highcharts.setOptions({
 			colors: ['#4CAF50', '#FCDB77', '#F9A556']
 		});
+
+            Highcharts.getOptions().plotOptions.pie.colors = (function(){
+                  var colors = [];
+                  var base = '#4CAF50';
+                  var i;
+
+                  for(i = 0; i<10; i++){
+                        colors.push(Highcharts.Color(base).brighten((i-3)/9).get());
+                  }
+                  return colors;
+            }());
             //AGE GRAPH
 		$('#age_graph').highcharts({
 			chart: {
@@ -305,9 +320,13 @@ $(document).ready(function(){
                       allowPointSelect: true,
                       cursor: 'pointer',
                       dataLabels: {
-                          enabled: false
+                          enabled: true,
+                          format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                          style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                          }
                       },
-                      showInLegend: true
+                      showInLegend: false
                   }
               },
               series: [{
@@ -349,14 +368,18 @@ $(document).ready(function(){
                   text: 'Sex'
               },
               plotOptions: {
-                  pie: {
-                      allowPointSelect: true,
-                      cursor: 'pointer',
-                      dataLabels: {
-                          enabled: false
-                      },
-                      showInLegend: true
-                  }
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                            style: {
+                                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        },
+                        showInLegend: false
+                    }
               },
               series: [{
                   name: 'Quantity',
@@ -384,14 +407,18 @@ $(document).ready(function(){
                   text: 'Educational Attainment'
               },
               plotOptions: {
-                  pie: {
-                      allowPointSelect: true,
-                      cursor: 'pointer',
-                      dataLabels: {
-                          enabled: false
-                      },
-                      showInLegend: true
-                  }
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                            style: {
+                                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        },
+                        showInLegend: false
+                    }
               },
               series: [{
                   name: 'Quantity',
@@ -434,14 +461,18 @@ $(document).ready(function(){
                   text: 'Monthly Salary'
               },
               plotOptions: {
-                  pie: {
-                      allowPointSelect: true,
-                      cursor: 'pointer',
-                      dataLabels: {
-                          enabled: false
-                      },
-                      showInLegend: true
-                  }
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                            style: {
+                                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        },
+                        showInLegend: false
+                    }
               },
               series: [{
                   name: 'Quantity',
@@ -763,17 +794,21 @@ $(document).ready(function(){
                   text: 'People\'s perception on climate change'
               },
               plotOptions: {
-                  pie: {
-                      allowPointSelect: true,
-                      cursor: 'pointer',
-                      dataLabels: {
-                          enabled: false
-                      },
-                      showInLegend: true
-                  }
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                            style: {
+                                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        },
+                        showInLegend: false
+                    }
               },
               series: [{
-                    name: 'perception',
+                    name: 'Quantity',
                     colorByPoint: true,
                     data: [{
                           name: 'It doesn\'t affect me at all',
