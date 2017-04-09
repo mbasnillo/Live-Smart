@@ -75,7 +75,7 @@ $(document).ready(function(){
   }); //end of btn_submit function
 
   function survey_success(){
-    location.reload();
+    window.location.href = 'viewstats.html';
   }
 
   $('#btn_back').click(function(){

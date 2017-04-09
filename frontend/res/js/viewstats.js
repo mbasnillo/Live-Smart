@@ -639,6 +639,89 @@ $(document).ready(function(){
             }]
 
             });
+            /*
+            $('#score_age').highcharts({
+                  title:{
+                        text: 'Average Score by Age'
+                  },
+                  xAxis: {
+                        name: 'Score achieved',
+                        categories: [
+                              'Age group'
+                        ],
+                        crosshair: true
+                  },
+                  labels: {
+                        items: [{
+                              html: 'Number of people by age',
+                              style: {
+                                    left: '50px',
+                                    top: '18px',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                              }
+                        }]
+                  },
+                  series: [{
+                        type: 'column',
+                        name: '16-18',
+                        data: [ave_age1]
+                  },
+                  {
+                        type: 'column',
+                        name: '19-21',
+                        data: [ave_age2]
+                  },
+                  {
+                        type: 'column',
+                        name: '22-24',
+                        data: [ave_age3]
+                  },
+                  {
+                        type: 'column',
+                        name: '25-27',
+                        data: [ave_age4]
+                  },
+                  {
+                        type: 'column',
+                        name: '28-30',
+                        data: [ave_age5]
+                  },
+                  {
+                        type: 'column',
+                        name: '31+',
+                        data: [ave_age6]
+                  },
+                  {
+                        type: 'pie',
+                        name: 'Age Chuchu',
+                        data: [{
+                             name: '16-18',
+                             y: age1.length
+                       }, {
+                             name: '19-21',
+                             y: age2.length
+                       }, {
+                             name: '22-24',
+                             y: age3.length
+                       }, {
+                             name: '25-27',
+                             y: age4.length
+                       }, {
+                             name: '28-30',
+                             y: age5.length
+                       }, {
+                             name: '31+',
+                             y: age6.length
+                       }],
+                       center: [100, 80],
+                       size: 100,
+                       showInLegend: false,
+                       dataLabels: {
+                             enabled: false
+                       }
+                  }]
+            });
+            */
 
             //SCORE SEX GRAPH
             $('#score_sex').highcharts({
