@@ -20,6 +20,9 @@ $(document).ready(function(){
             var score0=[], score1=[], score2=[], score3=[], score4=[], score5=[], score6=[], score7=[];
             var score8=[], score9=[], score10=[], score11=[], score12=[], score13=[], score14=[], score15=[];
             var score_age1=[], score_age2=[], score_age3=[], score_age4=[], score_age5=[], score_age6=[];
+            var score_sex1=[], score_sex2=[];
+            var score_educ1=[], score_educ2=[], score_educ3=[], score_educ4=[], score_educ5=[], score_educ6=[], score_educ7=[];
+            var score_sal1=[], score_sal2=[], score_sal3=[], score_sal4=[], score_sal5=[], score_sal6=[];
             var perception1=[], perception2=[], perception3=[], perception4=[], perception5=[];
 		for(var i=0; i<data.length; i++){
 
@@ -52,52 +55,67 @@ $(document).ready(function(){
 			//For pushing into sex
 			if(data[i].sex == "male"){
 				sex1.push(data[i].sex);
+                        score_sex1.push(data[i].score);
 			}else{
 				sex2.push(data[i].sex);
+                        score_sex2.push(data[i].score);
 			}
 
                   //For pushing into education
                   if(data[i].education == "none"){
                         education1.push(data[i].education);
+                        score_educ1.push(data[i].score);
                   }
                   if(data[i].education == "elementary"){
                         education2.push(data[i].education);
+                        score_educ2.push(data[i].score);
                   }
                   if(data[i].education == "highschool"){
                         education3.push(data[i].education);
+                        score_educ3.push(data[i].score);
                   }
                   if(data[i].education == "bachelors"){
                         education4.push(data[i].education);
+                        score_educ4.push(data[i].score);
                   }
                   if(data[i].education == "masters"){
                         education5.push(data[i].education);
+                        score_educ5.push(data[i].score);
                   }
                   if(data[i].education == "doctorate"){
                         education6.push(data[i].education);
+                        score_educ6.push(data[i].score);
                   }
                   if(data[i].education == "vocational"){
                         education7.push(data[i].education);
+                        score_educ7.push(data[i].score);
                   }
 
 
                   //For pushing into salary
                   if(data[i].salary == "none"){
                         salary1.push(data[i].salary);
+                        score_sal1.push(data[i].score);
                   }
                   if(data[i].salary == "0-15"){
                         salary2.push(data[i].salary);
+                        score_sal2.push(data[i].score);
                   }
                   if(data[i].salary == "15-30"){
                         salary3.push(data[i].salary);
+                        score_sal3.push(data[i].score);
                   }
                   if(data[i].salary == "30-45"){
                         salary4.push(data[i].salary);
+                        score_sal4.push(data[i].score);
                   }
                   if(data[i].salary == "45-60"){
                         salary5.push(data[i].salary);
+                        score_sal5.push(data[i].score);
                   }
                   if(data[i].salary == "60plus"){
                         salary6.push(data[i].salary);
+                        score_sal6.push(data[i].score);
                   }
 
                   if(data[i].score == "0"){
@@ -197,6 +215,75 @@ $(document).ready(function(){
                   ave_age6 = ave_age6 + score_age6[i];
             }
             ave_age6 = ave_age6 / score_age6.length;
+
+            //SCORE SEX
+            var ave_sex1=0, ave_sex2=0;
+            for(var i=0; i<score_sex1.length;i++){
+                  ave_sex1 = ave_sex1 + score_sex1[i];
+            }
+            ave_sex1 = ave_sex1 / score_sex1.length;
+            for(var i=0; i<score_sex2.length;i++){
+                  ave_sex2 = ave_sex2 + score_sex2[i];
+            }
+            ave_sex2 = ave_sex2 / score_sex2.length;
+
+            //SCORE EDUCATION
+            var ave_educ1=0, ave_educ2=0, ave_educ3=0, ave_educ4=0, ave_educ5=0, ave_educ6=0, ave_educ7=0;
+            for(var i=0; i<score_educ1.length; i++){
+                  ave_educ1 = ave_educ1 + score_educ1[i];
+            }
+            ave_educ1 = ave_educ1 / score_educ1.length;
+            for(var i=0; i<score_educ2.length; i++){
+                  ave_educ2 = ave_educ2 + score_educ2[i];
+            }
+            ave_educ2 = ave_educ2 / score_educ2.length;
+            for(var i=0; i<score_educ3.length; i++){
+                  ave_educ3 = ave_educ3 + score_educ3[i];
+            }
+            ave_educ3 = ave_educ3 / score_educ3.length;
+            for(var i=0; i<score_educ4.length; i++){
+                  ave_educ4 = ave_educ4 + score_educ4[i];
+            }
+            ave_educ4 = ave_educ4 / score_educ4.length;
+            for(var i=0; i<score_educ5.length; i++){
+                  ave_educ5 = ave_educ5 + score_educ5[i];
+            }
+            ave_educ5 = ave_educ5 / score_educ5.length;
+            for(var i=0; i<score_educ6.length; i++){
+                  ave_educ6 = ave_educ6 + score_educ6[i];
+            }
+            ave_educ6 = ave_educ6 / score_educ6.length;
+            for(var i=0; i<score_educ7.length; i++){
+                  ave_educ7 = ave_educ7 + score_educ7[i];
+            }
+            ave_educ7 = ave_educ7 / score_educ7.length;
+
+            //SCORE SALARY
+            var ave_sal1=0, ave_sal2=0, ave_sal3=0, ave_sal4=0, ave_sal5=0, ave_sal6=0;
+            for(var i=0; i<score_sal1.length; i++){
+                  ave_sal1 = ave_sal1 + score_sal1[i];
+            }
+            ave_sal1 = ave_sal1 / score_sal1.length;
+            for(var i=0; i<score_sal2.length; i++){
+                  ave_sal2 = ave_sal2 + score_sal2[i];
+            }
+            ave_sal2 = ave_sal2 / score_sal2.length;
+            for(var i=0; i<score_sal3.length; i++){
+                  ave_sal3 = ave_sal3 + score_sal3[i];
+            }
+            ave_sal3 = ave_sal3 / score_sal3.length;
+            for(var i=0; i<score_sal4.length; i++){
+                  ave_sal4 = ave_sal4 + score_sal4[i];
+            }
+            ave_sal4 = ave_sal4 / score_sal4.length;
+            for(var i=0; i<score_sal5.length; i++){
+                  ave_sal5 = ave_sal5 + score_sal5[i];
+            }
+            ave_sal5 = ave_sal5 / score_sal5.length;
+            for(var i=0; i<score_sal6.length; i++){
+                  ave_sal6 = ave_sal6 + score_sal6[i];
+            }
+            ave_sal6 = ave_sal6 / score_sal6.length;
 
 		Highcharts.setOptions({
 			colors: ['#4CAF50', '#FCDB77', '#F9A556']
@@ -522,9 +609,147 @@ $(document).ready(function(){
 
             });
 
-            Highcharts.setOptions({
-			colors: ['#4CAF50', '#FCDB77', '#F9A556']
-		})
+            //SCORE SEX GRAPH
+            $('#score_sex').highcharts({
+                  chart: {
+                  backgroundColor: '#FAFAFA',
+                  type: 'column'
+            },
+            title:{
+                  text: "Average Score by Sex"
+            },
+            xAxis: {
+                  name: 'Score achieved',
+                  categories: [
+                        'Sex'
+                  ],
+                  crosshair: true
+            },
+            yAxis: {
+                  min: 0,
+                  max: 15,
+                  tickInterval: 1,
+                  title: {
+                        text: 'Average score'
+                  }
+            },
+            series: [{
+                  name: 'Male',
+                  data: [ave_sex1]
+            },
+            {
+                  name: 'Female',
+                  data: [ave_sex2]
+            }]
+
+            });
+
+            //SCORE EDUCATION GRAPH
+            $('#score_education').highcharts({
+                  chart: {
+                  backgroundColor: '#FAFAFA',
+                  type: 'column'
+            },
+            title:{
+                  text: "Average Score by Educational Attainment"
+            },
+            xAxis: {
+                  name: 'Educational Attainment',
+                  categories: [
+                        'Education'
+                  ],
+                  crosshair: true
+            },
+            yAxis: {
+                  min: 0,
+                  max: 15,
+                  tickInterval: 1,
+                  title: {
+                        text: 'Average score'
+                  }
+            },
+            series: [{
+                  name: 'No Education',
+                  data: [ave_educ1]
+            },
+            {
+                  name: 'Elementary',
+                  data: [ave_educ2]
+            },
+            {
+                  name: 'High School',
+                  data: [ave_educ3]
+            },
+            {
+                  name: 'Bachelor\'s Degree',
+                  data: [ave_educ4]
+            },
+            {
+                  name: 'Master\'s Degree',
+                  data: [ave_educ5]
+            },
+            {
+                  name: 'Doctorate',
+                  data: [ave_educ6]
+            },
+            {
+                  name: 'Vocational',
+                  data: [ave_educ7]
+            }]
+
+            });
+
+            //SCORE SALARY GRAPH
+            $('#score_salary').highcharts({
+                  chart: {
+                  backgroundColor: '#FAFAFA',
+                  type: 'column'
+            },
+            title:{
+                  text: "Average Score by Monthly Salary"
+            },
+            xAxis: {
+                  name: 'Salary Range',
+                  categories: [
+                        'Salary'
+                  ],
+                  crosshair: true
+            },
+            yAxis: {
+                  min: 0,
+                  max: 15,
+                  tickInterval: 1,
+                  title: {
+                        text: 'Average score'
+                  }
+            },
+            series: [{
+                  name: 'No Salary',
+                  data: [ave_sal1]
+            },
+            {
+                  name: 'Less than P15,000',
+                  data: [ave_sal2]
+            },
+            {
+                  name: 'P15,001 to P30,000',
+                  data: [ave_sal3]
+            },
+            {
+                  name: 'P30,001 to P45,000',
+                  data: [ave_sal4]
+            },
+            {
+                  name: 'P45,001 to P60,000',
+                  data: [ave_sal5]
+            },
+            {
+                  name: 'Greater than P60,000',
+                  data: [ave_sal6]
+            }]
+
+            });
+
             //PERCEPTION GRAPH
             $('#perception_graph').highcharts({
                   chart: {
