@@ -25,7 +25,12 @@ exports.deleteUser = function (req, res, next){
 			return res.status(400).send("ERROR: Username does not exist!");
 		}else if(rows[0].is_admin == 0){
 			db.query("DELETE FROM USERS WHERE username = ?", [username], function(err2, rows2){
-				return res.send("Successfully deleted user!");
+				db.query("DELETE FROM GEN_STATS WHERE username = ?", [username], function(err3, rows3){
+					if(err3){
+						return next(err3);
+					}
+					return res.send("Successfully deleted user!");
+				});
 			});
 		}else{
 			return res.status(400).send("ERROR: Cannot delete admin!");
