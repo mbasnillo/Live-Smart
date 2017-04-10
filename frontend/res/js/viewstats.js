@@ -289,10 +289,11 @@ $(document).ready(function(){
             //GRAPHS BEGIN HERE
 
             //SET COLORS
+            /*
 		Highcharts.setOptions({
 			colors: ['#4CAF50', '#FCDB77', '#F9A556']
 		});
-
+            */
             Highcharts.getOptions().plotOptions.pie.colors = (function(){
                   var colors = [];
                   var base = '#4CAF50';
@@ -506,7 +507,7 @@ $(document).ready(function(){
                   type: 'column'
             },
             title:{
-                  text: "Scores"
+                  text: "Number of people who achieved the following scores"
             },
             xAxis: {
                   name: 'Score achieved',
