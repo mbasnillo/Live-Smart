@@ -1,11 +1,48 @@
-td {
-	/*background-color: #FAFAFA;*/
+.top-bar {
+  background: linear-gradient(to right, #4CAF50, #388E3C);
 }
 
-.top-bar{
-	background: linear-gradient(to right, #4CAF50, #388E3C);
+.icon {
+	font-size: 96px;
 }
 
-.icon{
-	font-size: 42px;
+.white-text {
+	color: #FFF;
+}
+
+.shadow1 {
+  text-shadow: 3px 3px 3px #000;
+}
+
+#header {
+	background: linear-gradient(to right, #C8E6C9, #81C784);
+  position: relative;
+  z-index: 0;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding-top:50px;
+}
+
+#header .bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('../img/background.jpg');
+  /* Background from http://www.guoguiyan.com/data/out/65/68425917-environment-wallpapers.jpg */
+  background-size: cover;
+  background-position: 70% 18%;
+  opacity: .8;
+  width: 100%;
+  height: 100%;
+}
+
+#footer {
+  padding:10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Live Smart - Log In</title>
+	<title>Live Smart - Index</title>
 
 	<link rel="stylesheet" type="text/css" href="res/css/page-style.css">
+	<link rel="stylesheet" type="text/css" href="res/css/login_page.css">
 	<link rel="stylesheet" type="text/css" href="res/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="res/css/foundation.min.css">
 	<link rel="stylesheet" type="text/css" href="res/css/foundation-icons.css">
@@ -13,83 +14,99 @@
 	<script type="text/javascript" src="res/js/alertify.min.js"></script>
 </head>
 <body>
+	<div class="expanded row" id="header">
+		<div class="bg"></div>
 
-	<div class="top-bar">
-		<div class="menu-centered">
-			<text style="font-family: codebold;font-size: 60px; color:#FFF;"><b>Live Smart</b></text>
-		</div>
-	</div>
+		<div class="row white-text" align="center">
+			<div class="large-12 columns">
+				<b class="codebold shadow1" id="site_title">LIVE SMART</b>
 
-	<div class="row">
-		<div class="small-8 columns" style="margin-top: 50px;">
-			<text class="prociono" style="font-size:36px">What is Live Smart?</text>
-			<p>
-				Insert description here.
-			</p>
-
-			<hr>
-
-			<div class="row">
-				<div class="small-10 columns">
-					<table class="unstriped">
-						<tr>
-							<td align="center"><i class="fi-graph-pie icon"></i> </td>
-							<td><b>View graphs and statistics</b> and see how much people know about global warming and carbon footprints.</td>
-						</tr>
-
-						<tr>
-							<td align="center"><i class="fi-graph-trend icon"></i> </td>
-							<td><b>View your carbon footprint levels</b> over a period of time.</td>
-						</tr>
-
-						<tr>
-							<td align="center"><i class="fi-mobile icon"></i> </td>
-							<td><b>Mobile responsive</b> so that you can easily compute on your phone as well.</td>
-						</tr>
-					</table>
+				<div id="login_section">
+					<label><b class="prociono">Username</b>
+						<input type="text" id="login_username">
+					</label>
+					<label><b class="prociono">Password</b>
+						<input type="password" id="login_password">
+					</label>
+					<button type="button" class="warning button" id="btn_login" style="width:150px;"><b class="prociono">Log In</b></button>
+					<p>
+						<button type="button" class="secondary button" id="show_signup" style="width:150px"><b class="prociono">Sign Up</b></button>
+					</p>
 				</div>
-				<div class="small-2 columns">
+
+				<div id="signup_section">
+					<label><b class="prociono">Username</b>
+						<input type="text" id="signup_username">
+					</label>
+					<label><b class="prociono">Password</b>
+						<input type="password" id="signup_password">
+					</label>
+					<label><b class="prociono">Confirm Password</b>
+						<input type="password" id="signup_confirmpassword">
+					</label>
+					<button type="button" class="warning button" id="btn_signup" style="width:150px;"><b class="prociono">Sign Up</b></button>
+					<p>
+						<button type="button" class="secondary button" id="show_login" style="width:150px;"><b class="prociono">Log In</b></button>
+					</p>
+				</div>
+
+				<div id="button_section">
+
 
 				</div>
 			</div>
-
-			<hr />
-
-			<h3>Done</h3>
-			<ul>
-				<li>Log in and session functionalities (including admin side) **Needs fine tuning</li>
-				<li>Delete user (admin side)</li>
-				<li>Highcharts.js for carbon footprint</li>
-				<li>Display message if user has no computed carbon footprint levels yet</li>
-				<li>Display message if user does not exist (admin side)</li>
-				<li>Added Alertify.js alerts</li>
-				<li>Now redirects properly if logged in/out</li>
-				<li>Fixed Schema for Gen stats</li>
-				<li>Can now add to gen_stats table</li>
-				<li>Redirect to result page after answering survey</li>
-				<li>Highcharts for surveys</li>
-				<li>Questions for survey + answers/scoring system</li>
-			</ul>
-			<h3>To do:</h3>
-			<ul>
-				<li>Questions + scoring algo for carbon footprint</li>
-				<li>Implement questionnaires/surveys in mobile app</li>
-				<li>Send data from mobile app to web backend</li>
-				<li>display useful links on carbon footprint information</li>
-			</ul>
 		</div>
 
-		<div class="small-4 columns" style="margin-top: 50px;">
-			<label><b class="prociono">Username</b>
-				<input type="text" id="username">
-			</label>
-			<label><b class="prociono">Password</b>
-				<input type="password" id="password">
-			</label>
-			<button type="button" class="warning button" id="btn_login" style="width:150px;"><b class="prociono">Log In</b></button>
-			<button type="button" class="warning button" id="btn_signup" style="width:150px;"><b class="prociono">Sign Up</b></button>
-
+		<div style="height:50px;">
+			&nbsp;
 		</div>
+	</div>
+
+	<div class="expanded row prociono" align="center">
+		<div class="large-12 columns" id="desc1">
+			<div class="row">
+				<p>
+					<b style="font-size:48px">What is Live Smart?</b>
+				</p>
+			</div>
+
+			<div class="row">
+				<p>
+					Live Smart is a carbon analytics web application that allows a person to compute for their individual carbon footprint levels and view their previous computations.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="expanded row prociono" align="center">
+		<div class="large-12 columns" id="desc2">
+			<div class="row">
+				<div class="large-4 columns">
+					<i class="fi-graph-pie icon"></i>
+					<p>
+						<b>View graphs and statistics</b> and see how much people know about global warming and carbon footprints.
+					</p>
+				</div>
+				<div class="large-4 columns">
+					<i class="fi-graph-trend icon"></i>
+					<p>
+						<b>View your carbon footprint levels</b> over a period of time.
+					</p>
+				</div>
+				<div class="large-4 columns">
+					<i class="fi-mobile icon"></i>
+					<p>
+						<b>Mobile responsive</b> so that you can easily compute on your phone as well.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="expanded row" align="center" id="footer">
+		(c) 2017 Miles Basnillo. Header image from <a href="http://www.guoguiyan.com/data/out/65/68425917-environment-wallpapers.jpg">http://www.guoguiyan.com/data/out/65/68425917-environment-wallpapers.jpg</a>
 	</div>
 
 	<script type="text/javascript" src="res/js/login_page.js"></script>

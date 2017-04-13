@@ -1,0 +1,23 @@
+#site_title {
+  font-size: 120px;
+}
+
+#login_section, #signup_section {
+  width: 50%;
+}
+
+#show_login, #show_signup {
+  width: 100px;
+}
+
+#desc1, #desc2, #todo {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+}
+
+#desc2 {
+  background-color: #EEE;
+}

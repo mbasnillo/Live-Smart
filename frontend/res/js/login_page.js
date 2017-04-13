@@ -2,6 +2,28 @@
 
 $(document).ready(function(){
   alertify.set('notifier','position', 'top-right');
+  $('#signup_section').hide();
+
+  $('#show_login').click(function(){
+    $('#signup_section').hide();
+    $('#login_section').show();
+  });
+
+  $('#show_signup').click(function(){
+    $('#login_section').hide();
+    $('#signup_section').show();
+  });
+
+  $(document).keypress(function(event){
+      if(event.keyCode == 13){
+          if($('#login_section').is(":visible")){
+            $('#btn_login').click();
+          }else{
+            $('#btn_signup').click();
+          }
+      }
+  });
+
   $.ajax({
           url: '/checkLoggedOut',
           method: 'POST',
@@ -18,18 +40,11 @@ $(document).ready(function(){
     }
   }
 
-  $(document).keypress(function(event){
-      if(event.keyCode == 13){
-          $('#btn_login').click();
-      }
-  });
-
-
 	$('#btn_login').click(login);
 
 	function login(){
-		const username = $('#username').val();
-		const password = $('#password').val();
+		const username = $('#login_username').val();
+		const password = $('#login_password').val();
 
 		$.ajax({
             url: '/login',
@@ -62,9 +77,30 @@ $(document).ready(function(){
 		*/
 	}
 
-    $('#btn_signup').click(signup);
+  $('#btn_signup').click(signup);
 
-    function signup(){
-        window.location.href = 'signup.html';
-    }
+	function signup(){
+		const username = $('#signup_username').val();
+		const password = $('#signup_password').val();
+    const confirmpassword = $('#signup_confirmpassword').val();
+
+		$.ajax({
+            url: '/signup',
+            method: 'PUT',
+            data: {
+                username: username,
+                password: password,
+                confirmpassword: confirmpassword
+            },
+            dataType: 'json',
+            success: signup_success,
+            error: function(err){
+                return alertify.notify(err.responseText, 'night', 2, function(){ });
+            }
+      });
+	}
+
+	function signup_success(){
+		window.location.href = 'index.html';
+	}
 });
