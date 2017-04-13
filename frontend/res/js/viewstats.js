@@ -307,7 +307,6 @@ $(document).ready(function(){
             //AGE GRAPH
 		$('#age_graph').highcharts({
 			chart: {
-                  backgroundColor: '#FAFAFA',
                   plotBackgroundColor: null,
                   plotBorderWidth: null,
                   plotShadow: false,
@@ -359,7 +358,6 @@ $(document).ready(function(){
             //SEX GRAPH
             $('#sex_graph').highcharts({
 			chart: {
-                  backgroundColor: '#FAFAFA',
                   plotBackgroundColor: null,
                   plotBorderWidth: null,
                   plotShadow: false,
@@ -398,7 +396,6 @@ $(document).ready(function(){
             //EDUCATION GRAPH
 		$('#education_graph').highcharts({
 			chart: {
-                  backgroundColor: '#FAFAFA',
                   plotBackgroundColor: null,
                   plotBorderWidth: null,
                   plotShadow: false,
@@ -452,7 +449,6 @@ $(document).ready(function(){
             //SALARY GRAPH
 		$('#salary_graph').highcharts({
 			chart: {
-                  backgroundColor: '#FAFAFA',
                   plotBackgroundColor: null,
                   plotBorderWidth: null,
                   plotShadow: false,
@@ -503,7 +499,6 @@ $(document).ready(function(){
             //SCORE OVERALL GRAPH
             $('#score_overall').highcharts({
                   chart: {
-                  backgroundColor: '#FAFAFA',
                   type: 'column'
             },
             title:{
@@ -593,7 +588,6 @@ $(document).ready(function(){
             //SCORE AGE GRAPH
             $('#score_age').highcharts({
                   chart: {
-                  backgroundColor: '#FAFAFA',
                   type: 'column'
             },
             title:{
@@ -727,7 +721,6 @@ $(document).ready(function(){
             //SCORE SEX GRAPH
             $('#score_sex').highcharts({
                   chart: {
-                  backgroundColor: '#FAFAFA',
                   type: 'column'
             },
             title:{
@@ -762,7 +755,6 @@ $(document).ready(function(){
             //SCORE EDUCATION GRAPH
             $('#score_education').highcharts({
                   chart: {
-                  backgroundColor: '#FAFAFA',
                   type: 'column'
             },
             title:{
@@ -817,7 +809,6 @@ $(document).ready(function(){
             //SCORE SALARY GRAPH
             $('#score_salary').highcharts({
                   chart: {
-                  backgroundColor: '#FAFAFA',
                   type: 'column'
             },
             title:{
@@ -868,7 +859,6 @@ $(document).ready(function(){
             //PERCEPTION GRAPH
             $('#perception_graph').highcharts({
                   chart: {
-                  backgroundColor: '#FAFAFA',
                   plotBackgroundColor: null,
                   plotBorderWidth: null,
                   plotShadow: false,
