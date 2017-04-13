@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation-icons.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/alertify.min.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/page-style.css">
+	<link rel="stylesheet" type="text/css" href="../res/css/survey-page.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/fonts.css">
 
 	<script type="text/javascript" src="../res/js/jquery-3.1.1.min.js"></script>
@@ -21,284 +22,252 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="small-12 columns" style="margin-top: 50px;" align="center">
-			<text class="prociono" style="font-size:28px">Take the survey below:</text>
-	</div>
+	<div class="row" align="center">
+		<div class="large-12 columns  main-body">
+			<div id="question_container" class="myriad">
 
-	<div class="row">
-		<div class="small-2 columns">
-    &nbsp;
-		</div>
-
-		<div class="small-8 columns" align="center">
-			<hr />
-			<div class="row">
-				<h4>General information</h4>
-				<!--AGE-->
-				<div class="small-6 columns">
-					<label><b>Age:</b></label>
-					<div style="text-align: center;">
-						<div style="display: inline-block; text-align: center; width: 50%;">
-							<input type="text" name="age" id="form_age"/>
-						</div>
-					</div>
+				<div id="q_age">
+					<h2 class="myriad-semibold">How old are you?</h2>
+					<input type="text" name="age" class="text-input" id="form_age"/>
+					<p>
+						<button type="button" class="button survey-btn disabled" id="left1"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right1"><i class="fi-arrow-right arrow"></i></button>
+					</p>
 				</div>
 
-				<!--SEX-->
-				<div class="small-6 columns">
-					<label><b>Sex:</b></label>
-					<input type="radio" name="sex" value="male" id="sex_male" /> <label for="sex_male">Male</label>
-					<input type="radio" name="sex" value="female" id="sex_female" /> <label for="sex_female">Female</label>
+				<div id="q_sex">
+					<h2 class="myriad-semibold">What is your biological sex?</h2>
+					<input type="radio" name="sex" value="male" id="sex_male" /> <label for="sex_male">Male</label> <br />
+					<input type="radio" name="sex" value="female" id="sex_female" /> <label for="sex_female">Female</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left2"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right2"><i class="fi-arrow-right arrow"></i></button>
+					</p>
 				</div>
 
+				<div id="q_educ">
+					<h2 class="myriad-semibold">What is your educational attainment?</h2>
+					<input type="radio" name="education" value="none" id="educ_none"/><label for="educ_none">No Formal Education</label> <br />
+					<input type="radio" name="education" value="elementary" id="educ_elem"/><label for="educ_elem">Elementary</label> <br />
+					<input type="radio" name="education" value="highschool" id="educ_high"/><label for="educ_high">High School</label> <br />
+					<input type="radio" name="education" value="bachelors" id="educ_bach"/><label for="educ_bach">Bachelor's Degree</label> <br />
+					<input type="radio" name="education" value="masters" id="educ_mast"/><label for="educ_mast">Master's Degree</label> <br />
+					<input type="radio" name="education" value="doctorate" id="educ_doct"/><label for="educ_doct">Doctorate Degree</label> <br />
+					<input type="radio" name="education" value="vocational" id="educ_voca"/><label for="educ_voca">Vocational Course</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left3"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right3"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_sal">
+					<h2 class="myriad-semibold">How much do you earn in a month?</h2>
+					<input type="radio" name="salary" value="none" id="salary_none" /><label for="salary_none">None</label> <br />
+					<input type="radio" name="salary" value="0-15" id="salary_0" /><label for="salary_0">Less than P15,000</label> <br />
+					<input type="radio" name="salary" value="15-30" id="salary_15" /><label for="salary_15">P15,001 to P30,000</label> <br />
+					<input type="radio" name="salary" value="30-45" id="salary_30" /><label for="salary_30">P30,001 to P45,000</label> <br />
+					<input type="radio" name="salary" value="45-60" id="salary_45" /><label for="salary_45">P45,001 to P60,000</label> <br />
+					<input type="radio" name="salary" value="60plus" id="salary_60" /><label for="salary_60">Greater than P60,000</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left4"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right4"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_1">
+					<h2 class="myriad-semibold">Answer the following to the best of your knowledge</h2>
+					<h2 class="myriad-semibold">Q1. What is climate change?</h2>
+					<input type="radio" name="q1" value="0" id="q11" /><label for="q11">Extreme climate events (Typhoons, draught)</label> <br />
+					<input type="radio" name="q1" value="1" id="q12" /><label for="q12">Rise in global temperature</label> <br />
+					<input type="radio" name="q1" value="0" id="q13" /><label for="q13">Both</label> <br />
+					<input type="radio" name="q1" value="0" id="q14" /><label for="q14">None of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left5"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right5"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_2">
+					<h2 class="myriad-semibold">Q2. What does not cause climate change?</h2>
+					<input type="radio" name="q2" value="1" id="q21" /><label for="q21">Decrease in population</label> <br />
+					<input type="radio" name="q2" value="0" id="q22" /><label for="q22">Increase in factories/industries</label> <br />
+					<input type="radio" name="q2" value="0" id="q23" /><label for="q23">Illegal logging</label> <br />
+					<input type="radio" name="q2" value="0" id="q24" /><label for="q24">Increase in use of fossil fuels</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left6"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right6"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_3">
+					<h2 class="myriad-semibold">Q3. Which are sources of greenhouse gases?</h2>
+					<input type="radio" name="q3" value="0" id="q31" /><label for="q31">Aerosol in airsprays</label> <br />
+					<input type="radio" name="q3" value="0" id="q32" /><label for="q32">Burning of fossil fuels</label> <br />
+					<input type="radio" name="q3" value="0" id="q33" /><label for="q33">Methane emission from livestock</label> <br />
+					<input type="radio" name="q3" value="1" id="q34" /><label for="q34">All of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left7"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right7"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_4">
+					<h2 class="myriad-semibold">Q4. Which of the following practices will help mitigate climate change?</h2>
+					<input type="radio" name="q4" value="1" id="q41" /><label for="q41">Planting trees</label> <br />
+					<input type="radio" name="q4" value="0" id="q42" /><label for="q42">Using more paper</label> <br />
+					<input type="radio" name="q4" value="0" id="q43" /><label for="q43">Not turning off the light</label> <br />
+					<input type="radio" name="q4" value="0" id="q44" /><label for="q44">None of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left8"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right8"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_5">
+					<h2 class="myriad-semibold">Q5. Which of the following help communities adapt to climate change?</h2>
+					<input type="radio" name="q5" value="0" id="q51" /><label for="q51">Using more fossil fuels</label> <br />
+					<input type="radio" name="q5" value="1" id="q52" /><label for="q52">Preparing the community for future disasters</label> <br />
+					<input type="radio" name="q5" value="0" id="q53" /><label for="q53">Both</label> <br />
+					<input type="radio" name="q5" value="0" id="q54" /><label for="q54">None of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left9"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right9"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_6">
+					<h2 class="myriad-semibold">Q6. What is a carbon footprint?</h2>
+					<input type="radio" name="q6" value="0" id="q61" /><label for="q61">Greenhouse gas emissions caused by individuals in their lifetime</label> <br />
+					<input type="radio" name="q6" value="0" id="q62" /><label for="q62">Carbon emissions related to products and services consumed by individuals</label> <br />
+					<input type="radio" name="q6" value="1" id="q63" /><label for="q63">Both</label> <br />
+					<input type="radio" name="q6" value="0" id="q64" /><label for="q64">None of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left10"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right10"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_7">
+					<h2 class="myriad-semibold">Q7. What is/are a measure/s of carbon emissions?</h2>
+					<input type="radio" name="q7" value="1" id="q71" /><label for="q71">Kilograms of carbon dioxide</label> <br />
+					<input type="radio" name="q7" value="0" id="q72" /><label for="q72">Number of kilograms of food products consumed per year</label> <br />
+					<input type="radio" name="q7" value="0" id="q73" /><label for="q73">Both</label> <br />
+					<input type="radio" name="q7" value="0" id="q74" /><label for="q74">None of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left11"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right11"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_8">
+					<h2 class="myriad-semibold">Q8. What causes increase of carbon emissions?</h2>
+					<input type="radio" name="q8" value="0" id="q81" /><label for="q81">Increasing trend in protein-based diets</label> <br />
+					<input type="radio" name="q8" value="0" id="q82" /><label for="q82">Wide use of petroleum and petroleum-based products</label> <br />
+					<input type="radio" name="q8" value="0" id="q83" /><label for="q83">Conversion of forests to farms and other land uses</label> <br />
+					<input type="radio" name="q8" value="1" id="q84" /><label for="q84">All of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left12"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right12"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_9">
+					<h2 class="myriad-semibold">Q9. Whyh is carbon footprint important?</h2>
+					<input type="radio" name="q9" value="0" id="q91" /><label for="q91">It directly affects climate change</label> <br />
+					<input type="radio" name="q9" value="0" id="q92" /><label for="q92">It affects everybody</label> <br />
+					<input type="radio" name="q9" value="1" id="q93" /><label for="q93">Both</label> <br />
+					<input type="radio" name="q9" value="0" id="q94" /><label for="q94">None of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left13"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right13"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_10">
+					<h2 class="myriad-semibold">Q10. Who is responsible for monitoring carbon footprints?</h2>
+					<input type="radio" name="q10" value="0" id="q101" /><label for="q101">Individuals</label> <br />
+					<input type="radio" name="q10" value="0" id="q102" /><label for="q102">Communities</label> <br />
+					<input type="radio" name="q10" value="0" id="q103" /><label for="q103">Government</label> <br />
+					<input type="radio" name="q10" value="0" id="q104" /><label for="q104">Private Organizations</label> <br />
+					<input type="radio" name="q10" value="0" id="q105" /><label for="q105">Academe</label> <br />
+					<input type="radio" name="q10" value="1" id="q106" /><label for="q106">All of the above</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left14"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right14"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_11">
+					<h2 class="myriad-semibold">Q11. Carbon footprints can affect climate change</h2>
+					<input type="radio" name="q11" value="1" id="q111" /><label for="q111">True</label> <br />
+					<input type="radio" name="q11" value="0" id="q112" /><label for="q112">False</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left15"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right15"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_12">
+					<h2 class="myriad-semibold">Q12. The only reason for climate change are carbon footprints.</h2>
+					<input type="radio" name="q12" value="0" id="q121" /><label for="q121">True</label> <br />
+					<input type="radio" name="q12" value="1" id="q122" /><label for="q122">False</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left16"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right16"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_13">
+					<h2 class="myriad-semibold">Q13. One way to solve climate change is  to increase your carbon footprint.</h2>
+					<input type="radio" name="q13" value="0" id="q131" /><label for="q131">True</label> <br />
+					<input type="radio" name="q13" value="1" id="q132" /><label for="q132">False</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left17"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right17"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_14">
+					<h2 class="myriad-semibold">Q14. To address climate change, people will have to reduce carbon footprint.</h2>
+					<input type="radio" name="q14" value="1" id="q141" /><label for="q141">True</label> <br />
+					<input type="radio" name="q14" value="0" id="q142" /><label for="q142">False</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left18"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right18"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_15">
+					<h2 class="myriad-semibold">Q15. Eating more meat and travelling frequently will increase carbon footprint and accelerate climate change.</h2>
+					<input type="radio" name="q15" value="1" id="q151" /><label for="q151">True</label> <br />
+					<input type="radio" name="q15" value="0" id="q152" /><label for="q152">False</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left19"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn" id="right19"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
+
+				<div id="q_perc">
+					<h2 class="myriad-semibold">What is your perception on climate change?</h2>
+					<input type="radio" name="perception" value="1" id="perception1" /><label for="perception1">It doesn't affect me at all</label> <br />
+					<input type="radio" name="perception" value="2" id="perception2" /><label for="perception2">It affects me somehow</label> <br />
+					<input type="radio" name="perception" value="3" id="perception3" /><label for="perception3">It must be solved, but by experts</label> <br />
+					<input type="radio" name="perception" value="4" id="perception4" /><label for="perception4">It must be solved, and I would help if I knew how</label> <br />
+					<input type="radio" name="perception" value="5" id="perception5" /><label for="perception5">I can help address climate change!</label> <br />
+					<p>
+						<button type="button" class="button survey-btn" id="left20"><i class="fi-arrow-left arrow"></i></button>
+						<button type="button" class="button survey-btn disabled" id="right20"><i class="fi-arrow-right arrow"></i></button>
+					</p>
+				</div>
 			</div>
-
-			<p>
-				&nbsp;
-			</p>
-			<div class="row">
-				<!--EDUCATION-->
-				<div class="small-6 columns">
-					<label><b>Educational Attainment:</b></label>
-					<div style="text-align: center;">
-						<div style="display: inline-block; text-align: left; width: 50%;">
-							<input type="radio" name="education" value="none" id="educ_none"/><label for="educ_none">No Formal Education</label> <br />
-							<input type="radio" name="education" value="elementary" id="educ_elem"/><label for="educ_elem">Elementary</label> <br />
-							<input type="radio" name="education" value="highschool" id="educ_high"/><label for="educ_high">High School</label> <br />
-							<input type="radio" name="education" value="bachelors" id="educ_bach"/><label for="educ_bach">Bachelor's Degree</label> <br />
-							<input type="radio" name="education" value="masters" id="educ_mast"/><label for="educ_mast">Master's Degree</label> <br />
-							<input type="radio" name="education" value="doctorate" id="educ_doct"/><label for="educ_doct">Doctorate Degree</label> <br />
-							<input type="radio" name="education" value="vocational" id="educ_voca"/><label for="educ_voca">Vocational Course</label> <br />
-					</div>
-					</div>
-				</div>
-
-				<!--SALARY-->
-				<div class="small-6 columns">
-					<label><b>Monthly Salary (in php):</b></label>
-					<div style="text-align: center;">
-						<div style="display: inline-block; text-align: left; width: 50%;">
-							<input type="radio" name="salary" value="none" id="salary_none" /><label for="salary_none">None</label> <br />
-							<input type="radio" name="salary" value="0-15" id="salary_0" /><label for="salary_0">Less than P15,000</label> <br />
-							<input type="radio" name="salary" value="15-30" id="salary_15" /><label for="salary_15">P15,001 to P30,000</label> <br />
-							<input type="radio" name="salary" value="30-45" id="salary_30" /><label for="salary_30">P30,001 to P45,000</label> <br />
-							<input type="radio" name="salary" value="45-60" id="salary_45" /><label for="salary_45">P45,001 to P60,000</label> <br />
-							<input type="radio" name="salary" value="60plus" id="salary_60" /><label for="salary_60">Greater than P60,000</label> <br />
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<hr />
-
-			<h4>Knowledge on Climate Change & Carbon Footprint</h4>
-			<p>
-				Kindly answer the following to the best of your knowledge.
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>What is climate change?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q1" value="0" id="q11" /><label for="q11">Extreme climate events (Typhoons, draught)</label> <br />
-						<input type="radio" name="q1" value="1" id="q12" /><label for="q12">Rise in global temperature</label> <br />
-						<input type="radio" name="q1" value="0" id="q13" /><label for="q13">Both</label> <br />
-						<input type="radio" name="q1" value="0" id="q14" /><label for="q14">None of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>What does not cause climate change?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q2" value="1" id="q21" /><label for="q21">Decrease in population</label> <br />
-						<input type="radio" name="q2" value="0" id="q22" /><label for="q22">Increase in factories/industries</label> <br />
-						<input type="radio" name="q2" value="0" id="q23" /><label for="q23">Illegal logging</label> <br />
-						<input type="radio" name="q2" value="0" id="q24" /><label for="q24">Increase in use of fossil fuels</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Which are sources of greenhouse gases?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q3" value="0" id="q31" /><label for="q31">Aerosol in airsprays</label> <br />
-						<input type="radio" name="q3" value="0" id="q32" /><label for="q32">Burning of fossil fuels</label> <br />
-						<input type="radio" name="q3" value="0" id="q33" /><label for="q33">Methane emission from livestock</label> <br />
-						<input type="radio" name="q3" value="1" id="q34" /><label for="q34">All of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Which of the following practices help mitigate climate change?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q4" value="1" id="q41" /><label for="q41">Planting trees</label> <br />
-						<input type="radio" name="q4" value="0" id="q42" /><label for="q42">Using more paper</label> <br />
-						<input type="radio" name="q4" value="0" id="q43" /><label for="q43">Not turning off the light</label> <br />
-						<input type="radio" name="q4" value="0" id="q44" /><label for="q44">None of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Which of the following practices help communities adapt to climate change?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q5" value="0" id="q51" /><label for="q51">Using more fossil fuels</label> <br />
-						<input type="radio" name="q5" value="1" id="q52" /><label for="q52">Preparing the community for future disasters</label> <br />
-						<input type="radio" name="q5" value="0" id="q53" /><label for="q53">Both</label> <br />
-						<input type="radio" name="q5" value="0" id="q54" /><label for="q54">None of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>What is a carbon footprint?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q6" value="0" id="q61" /><label for="q61">Greenhouse gas emissions caused by individuals in their lifetime</label> <br />
-						<input type="radio" name="q6" value="0" id="q62" /><label for="q62">Carbon emissions related to products and services consumed by individuals</label> <br />
-						<input type="radio" name="q6" value="1" id="q63" /><label for="q63">Both</label> <br />
-						<input type="radio" name="q6" value="0" id="q64" /><label for="q64">None of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>What is/are a measure/s of carbon emissions?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q7" value="1" id="q71" /><label for="q71">Kilograms of carbon dioxide</label> <br />
-						<input type="radio" name="q7" value="0" id="q72" /><label for="q72">Number of kilograms of food products consumed per year</label> <br />
-						<input type="radio" name="q7" value="0" id="q73" /><label for="q73">Both</label> <br />
-						<input type="radio" name="q7" value="0" id="q74" /><label for="q74">None of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>What causes increase of carbon emissions?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q8" value="0" id="q81" /><label for="q81">Increasing trend in protein-based diets</label> <br />
-						<input type="radio" name="q8" value="0" id="q82" /><label for="q82">Wide use of petroleum and petroleum-based products</label> <br />
-						<input type="radio" name="q8" value="0" id="q83" /><label for="q83">Conversion of forests to farms and other land uses</label> <br />
-						<input type="radio" name="q8" value="1" id="q84" /><label for="q84">All of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Why is carbon footprint important?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q9" value="0" id="q91" /><label for="q91">It directly affects climate change</label> <br />
-						<input type="radio" name="q9" value="0" id="q92" /><label for="q92">It affects everybody</label> <br />
-						<input type="radio" name="q9" value="1" id="q93" /><label for="q93">Both</label> <br />
-						<input type="radio" name="q9" value="0" id="q94" /><label for="q94">None of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Who is responsible for monitoring carbon footprints?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q10" value="0" id="q101" /><label for="q101">Individuals</label> <br />
-						<input type="radio" name="q10" value="0" id="q102" /><label for="q102">Communities</label> <br />
-						<input type="radio" name="q10" value="0" id="q103" /><label for="q103">Government</label> <br />
-						<input type="radio" name="q10" value="0" id="q104" /><label for="q104">Private Organizations</label> <br />
-						<input type="radio" name="q10" value="0" id="q105" /><label for="q105">Academe</label> <br />
-						<input type="radio" name="q10" value="1" id="q106" /><label for="q106">All of the above</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Carbon footprints can affect climate change</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q11" value="1" id="q111" /><label for="q111">True</label> <br />
-						<input type="radio" name="q11" value="0" id="q112" /><label for="q112">False</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>The only reason for climate change are carbon footprints.</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q12" value="0" id="q121" /><label for="q121">True</label> <br />
-						<input type="radio" name="q12" value="1" id="q122" /><label for="q122">False</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>One way to solve climate change is to increase carbon footprint.</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q13" value="0" id="q131" /><label for="q131">True</label> <br />
-						<input type="radio" name="q13" value="1" id="q132" /><label for="q132">False</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>To address climate change, people will have to reduce carbon footprint.</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q14" value="1" id="q141" /><label for="q141">True</label> <br />
-						<input type="radio" name="q14" value="0" id="q142" /><label for="q142">False</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<p>
-				<label style="width:75%;"><b>Eating more meat and travelling frequently will increase carbon footprint and accelerate climate change.</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="q15" value="1" id="q151" /><label for="q151">True</label> <br />
-						<input type="radio" name="q15" value="0" id="q152" /><label for="q152">False</label> <br />
-					</div>
-				</div>
-			</p>
-
-			<hr />
-
-			<h4>Others</h4>
-
-			<p>
-				<label style="width:75%;"><b>What is your perception towards climate change?</b></label>
-				<div style="text-align: center;">
-					<div style="display: inline-block; text-align: left; width: 75%;">
-						<input type="radio" name="perception" value="1" id="perception1" /><label for="perception1">It doesn't affect me at all</label> <br />
-						<input type="radio" name="perception" value="2" id="perception2" /><label for="perception2">It affects me somehow</label> <br />
-						<input type="radio" name="perception" value="3" id="perception3" /><label for="perception3">It must be solved, but by experts</label> <br />
-						<input type="radio" name="perception" value="4" id="perception4" /><label for="perception4">It must be solved, and I would help if I knew how</label> <br />
-						<input type="radio" name="perception" value="5" id="perception5" /><label for="perception5">I can help address climate change!</label> <br />
-					</div>
-				</div>
-			</p>
-
-		</div><!--End of small-8 div-->
-
-		<div class="small-2 columns">
-			&nbsp;
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="small-12 columns" align="center">
-			<p>
-				<a href="#page_top">Click here to go back to top</a>
-			</p>
-			<button type="button" class="button orange-btn myriad" id="btn_submit">Submit</button>
+		<div class="large-12 columns" align="center">
+			<div id="submit_section">
+				<button type="button" class="button orange-btn myriad" id="btn_submit">Submit</button>
+			</div>
 			<button type="button" class="button red-btn myriad" id="btn_back">Go Back</button>
 		</div>
 	</div>

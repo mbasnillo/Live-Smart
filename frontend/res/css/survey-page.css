@@ -1,0 +1,20 @@
+label {
+  width: 75%;
+  font-size: 20px;
+}
+
+.arrow {
+  font-size: 32px;
+}
+
+.survey-btn {
+  background-color: #2C3539;
+}
+
+.text-input {
+  width: 50%;
+}
+
+#question_container {
+  padding: 20px;
+}
