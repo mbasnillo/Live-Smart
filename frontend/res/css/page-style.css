@@ -14,30 +14,50 @@
   text-shadow: 3px 3px 3px #000;
 }
 
-#header {
-	background: linear-gradient(to right, #C8E6C9, #81C784);
-  position: relative;
-  z-index: 0;
-  float: left;
-  width: 100%;
-  height: auto;
-  padding-top:50px;
+.shadow2 {
+  text-shadow: 2px 2px 1px #000000;
 }
 
-#header .bg {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url('../img/background.jpg');
-  /* Background from http://www.guoguiyan.com/data/out/65/68425917-environment-wallpapers.jpg */
-  background-size: cover;
-  background-position: 70% 18%;
-  opacity: .8;
-  width: 100%;
-  height: 100%;
+.yellow-btn {
+  background-color: #FFEB3B;
+  color: #000;
+  font-size: 16px;
+}
+
+.yellow-btn:hover {
+  background-color: #FBC02D;
+}
+
+.gray-btn {
+  background-color: #9E9E9E;
+  color: #000;
+  font-size:16px;
+}
+
+.gray-btn:hover {
+  background-color: #616161;
+}
+
+.red-btn {
+  background-color: #F44336;
+  width: 50%;
+  font-size: 20px;
+  color: #000;
+}
+
+.red-btn:hover {
+  background-color: #D32F2F;
+}
+
+.orange-btn {
+  background-color: #FFD54F;
+  width: 50%;
+  font-size: 20px;
+  color: #000;
+}
+
+.orange-btn:hover {
+  background-color: #FFC107;
 }
 
 #footer {

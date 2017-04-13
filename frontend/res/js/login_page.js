@@ -34,7 +34,7 @@ $(document).ready(function(){
       });
   function redirect(data){
     if(data == "USER"){
-      window.location.href = 'portal.html';
+      window.location.href = '/views/portal.html';
     }else if(data == "ADMIN"){
       window.location.href = '/views/admin.html';
     }
@@ -69,7 +69,7 @@ $(document).ready(function(){
             window.location.href = '/views/admin.html';
         }
         if(user.is_admin == 0){
-            window.location.href = 'portal.html';
+            window.location.href = '/views/portal.html';
         }
 
         /*

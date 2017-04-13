@@ -1,0 +1,53 @@
+.login-text {
+  font-size: 24px;
+}
+
+#header {
+  background: linear-gradient(to right, #4CAF50, #388E3C);
+  position: relative;
+  z-index: 0;
+  float: left;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-top:50px;
+}
+
+#header .bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('../img/background.jpg');
+  /* Background from http://www.guoguiyan.com/data/out/65/68425917-environment-wallpapers.jpg */
+  background-size: cover;
+  opacity: .75;
+  width: 100%;
+  height: 100%;
+}
+
+#site_title {
+  font-size: 120px;
+}
+
+#login_section, #signup_section {
+  width: 50%;
+}
+
+#show_login, #show_signup {
+  width: 100px;
+}
+
+#desc1, #desc2, #todo {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+}
+
+#desc2 {
+  background-color: #EEE;
+}

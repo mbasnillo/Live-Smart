@@ -5,7 +5,7 @@ $(document).ready(function(){
           url: '/checkLoggedIn',
           method: 'POST',
           error: function(err){
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
           }
       });
 
@@ -23,19 +23,19 @@ $(document).ready(function(){
     }
 
 	$('#btn_viewAll').click(function(){
-		window.location.href = 'views/viewstats.html';
+		window.location.href = 'viewstats.html';
 	});
 
 	$('#btn_survey').click(function(){
-		window.location.href = 'views/survey.html';
+		window.location.href = 'survey.html';
 	})
 
 	$('#btn_viewOwn').click(function(){
-		window.location.href = 'views/viewgraph.html';
+		window.location.href = 'viewgraph.html';
 	});
 
 	$('#btn_compute').click(function(){
-		window.location.href = 'views/computecarbon.html';
+		window.location.href = 'computecarbon.html';
 	})
 
 	$('#btn_logout').click(logout);
@@ -46,12 +46,12 @@ $(document).ready(function(){
             method: 'POST',
             success: logout_success,
             error: function(err){
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             }
         });
 	}
 
 	function logout_success(){
-		window.location.href = 'index.html';
+		window.location.href = '../index.html';
 	}
 });
