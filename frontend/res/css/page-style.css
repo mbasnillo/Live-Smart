@@ -96,6 +96,10 @@
   height: 100%;
 }
 
+#top_title {
+  font-size: 80px;
+}
+
 .main-body {
   padding-top:30px;
 }

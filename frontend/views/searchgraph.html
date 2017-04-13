@@ -3,11 +3,11 @@
 <head>
 	<title>Live Smart - View Your Graph</title>
 
-	<link rel="stylesheet" type="text/css" href="../res/css/page-style.css">
-	<link rel="stylesheet" type="text/css" href="../res/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation.min.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation-icons.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/alertify.min.css">
+	<link rel="stylesheet" type="text/css" href="../res/css/page-style.css">
+	<link rel="stylesheet" type="text/css" href="../res/css/fonts.css">
 
 	<script type="text/javascript" src="../res/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="../res/js/alertify.min.js"></script>
@@ -16,9 +16,10 @@
 </head>
 <body>
 
-	<div class="top-bar">
-		<div class="menu-centered">
-			<text style="font-family: codebold;font-size: 60px; color:#FFF;"><b>Live Smart</b></text>
+	<div class="expanded row" id="topbar" align="center">
+		<div class="bg"></div>
+		<div class="large-12 columns white-text">
+			<b class="myriad-bold shadow1" id="top_title">LIVE SMART</b>
 		</div>
 	</div>
 
@@ -26,11 +27,9 @@
 		<div class="small-12 columns" style="margin-top: 50px;" align="center">
 			<b class="prociono" style="font-size:36px">Search for a User's Graph</b>
 			<input type="text" id="search_user" style="width:50%;">
-			<button type="button" class="warning button" id="btn_search" style="width:100px;"><b class="prociono">Search</b></button>
-			<p>
-				<div id="graph_area" style="width:100%; height:400px;"></div>
-			<button type="button" class="alert button" id="btn_back" style="width:50%;"><b class="prociono">Go Back</b></button>
-			</p>
+			<button type="button" class="button orange-btn myriad" id="btn_search">Search</button>
+			<div id="graph_area" style="width:100%; height:400px;"></div>
+			<button type="button" class="button red-btn myriad" id="btn_back">Go Back</button>
 		</div>
 	</div>
 
