@@ -97,6 +97,11 @@ exports.getName = function(req, res, next){
 	return res.send(username);
 }
 
+exports.getRole = function(req,res, next){
+	const role = req.session.role;
+	return res.send(role);
+}
+
 exports.checkLoggedIn = function(req, res, next){
 	if(!req.session.role){
 		return res.status(400).send("ERROR: Nobody is logged in!");

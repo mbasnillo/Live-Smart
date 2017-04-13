@@ -13,6 +13,7 @@ module.exports = function(router){
 	router.post('/logout', authenticate.logout);
 	router.put('/signup', authenticate.signup);
 	router.post('/getName', authenticate.getName);
+	router.get('/getRole', authenticate.getRole);
 	router.post('/checkLoggedIn', authenticate.checkLoggedIn);
 	router.post('/checkLoggedOut', authenticate.checkLoggedOut);
 
@@ -20,6 +21,7 @@ module.exports = function(router){
 	router.get('/getCarbonFootprints', analytics.getCarbonFootprints);
 	router.post('/getUserGraph', analytics.getUserGraph);
 	router.get('/getStatistics', analytics.getStatistics);
+	router.get('/getUsers', analytics.getUsers);
 
 	//ADMIN
 	router.delete('/deleteUser', admin.deleteUser);

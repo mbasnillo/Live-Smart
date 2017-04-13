@@ -36,12 +36,13 @@ $(document).ready(function(){
           return alertify.notify(err.responseText, 'night', 2, function(){ });
         }
     });
+
+    $('#username').val("");
+    $('#confirmusername').val("");
 	}
 
   function delete_success(data){
-    alertify.notify(data.responseText, 'night', 2, function(){
-      location.reload();
-    });
+    alertify.notify(data.responseText, 'night', 2, function(){ });
   }
 
   $('#btn_back').click(goback);

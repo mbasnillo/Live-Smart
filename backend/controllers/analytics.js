@@ -58,3 +58,16 @@ exports.getStatistics = function(req, res, next){
     res.send(rows);
   });
 }
+
+exports.getUsers = function(req, res, next){
+  db.query("SELECT * FROM USERS", function(err, rows){
+    if(err){
+			return res.status(400).send("ERROR: Cannot retrieve data");
+		}
+    if(!rows.length){
+			return res.status(400).send("ERROR: Data does not exist!");
+		}
+
+    res.send(rows);
+  });
+}

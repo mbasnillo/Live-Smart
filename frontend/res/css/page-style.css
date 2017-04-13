@@ -62,6 +62,10 @@
 .orange-btn:hover {
   background-color: #FFC107;
 }
+
+.button {
+  font-size: 22px;
+}
 /********** END OF BUTTON CLASSES **********/
 
 #footer {

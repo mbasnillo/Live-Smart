@@ -9,6 +9,14 @@ $(document).ready(function(){
           }
       });
 
+      var users;
+      $.ajax({
+            url: '/getUsers',
+            method: 'GET',
+      }).done(function(data){
+            users = data.length;
+      });
+
 	$.ajax({
 					url: '/getStatistics',
 					method: 'GET',
@@ -24,6 +32,7 @@ $(document).ready(function(){
             var score_educ1=[], score_educ2=[], score_educ3=[], score_educ4=[], score_educ5=[], score_educ6=[], score_educ7=[];
             var score_sal1=[], score_sal2=[], score_sal3=[], score_sal4=[], score_sal5=[], score_sal6=[];
             var perception1=[], perception2=[], perception3=[], perception4=[], perception5=[];
+            var users_answered = data.length;
 		for(var i=0; i<data.length; i++){
 
 			//For pushing into age
@@ -287,24 +296,58 @@ $(document).ready(function(){
 
 
             //GRAPHS BEGIN HERE
-
-            //SET COLORS
-            /*
-		Highcharts.setOptions({
-			colors: ['#4CAF50', '#FCDB77', '#F9A556']
+            //GENERAL GRAPH
+            var gray = [];
+            var base = '#9E9E9E';
+            var i;
+            for(i = 0; i<10; i++){
+                  gray.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            }
+            Highcharts.setOptions({
+			colors: gray
 		});
-            */
-            Highcharts.getOptions().plotOptions.pie.colors = (function(){
-                  var colors = [];
-                  var base = '#4CAF50';
-                  var i;
-
-                  for(i = 0; i<10; i++){
-                        colors.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            $('#gen_graph').highcharts({
+                  chart: {
+                  type: 'column'
+            },
+            title:{
+                  text: ""
+            },
+            xAxis: {
+                  name: 'Number: ',
+                  categories: [
+                        'Users'
+                  ],
+                  crosshair: true
+            },
+            yAxis: {
+                  min: 0,
+                  tickInterval: 1,
+                  title: {
+                        text: 'Quantity'
                   }
-                  return colors;
-            }());
+            },
+            series: [{
+                  name: 'Number of users',
+                  data: [users]
+            },
+            {
+                  name: 'Number of users who answered the survey',
+                  data: [users_answered]
+            }]
+
+            });
+
             //AGE GRAPH
+            var orange = [];
+            var base = '#FFB74D';
+            var i;
+            for(i = 0; i<10; i++){
+                  orange.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            }
+            Highcharts.setOptions({
+			colors: orange
+		});
 		$('#age_graph').highcharts({
 			chart: {
                   plotBackgroundColor: null,
@@ -313,7 +356,7 @@ $(document).ready(function(){
                   type: 'pie'
               },
               title: {
-                  text: 'Age'
+                  text: ''
               },
               plotOptions: {
                   pie: {
@@ -356,6 +399,15 @@ $(document).ready(function(){
 		});
 
             //SEX GRAPH
+            var purple = [];
+            var base = '#BA68C8';
+            var i;
+            for(i = 0; i<10; i++){
+                  purple.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            }
+            Highcharts.setOptions({
+			colors: purple
+		});
             $('#sex_graph').highcharts({
 			chart: {
                   plotBackgroundColor: null,
@@ -364,7 +416,7 @@ $(document).ready(function(){
                   type: 'pie'
               },
               title: {
-                  text: 'Sex'
+                  text: ''
               },
               plotOptions: {
                     pie: {
@@ -394,6 +446,15 @@ $(document).ready(function(){
 		});
 
             //EDUCATION GRAPH
+            var blue = [];
+            var base = '#64B5F6';
+            var i;
+            for(i = 0; i<10; i++){
+                  blue.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            }
+            Highcharts.setOptions({
+			colors: blue
+		});
 		$('#education_graph').highcharts({
 			chart: {
                   plotBackgroundColor: null,
@@ -402,7 +463,7 @@ $(document).ready(function(){
                   type: 'pie'
               },
               title: {
-                  text: 'Educational Attainment'
+                  text: ''
               },
               plotOptions: {
                     pie: {
@@ -447,6 +508,15 @@ $(document).ready(function(){
 		});
 
             //SALARY GRAPH
+            var green = [];
+            var base = '#81C784';
+            var i;
+            for(i = 0; i<10; i++){
+                  green.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            }
+            Highcharts.setOptions({
+			colors: green
+		});
 		$('#salary_graph').highcharts({
 			chart: {
                   plotBackgroundColor: null,
@@ -455,7 +525,7 @@ $(document).ready(function(){
                   type: 'pie'
               },
               title: {
-                  text: 'Monthly Salary'
+                  text: ''
               },
               plotOptions: {
                     pie: {
@@ -497,12 +567,21 @@ $(document).ready(function(){
 		});
 
             //SCORE OVERALL GRAPH
+            var red = [];
+            var base = '#E57373';
+            var i;
+            for(i = 0; i<15; i++){
+                  red.push(Highcharts.Color(base).brighten((i-3)/30).get());
+            }
+            Highcharts.setOptions({
+			colors: red
+		});
             $('#score_overall').highcharts({
                   chart: {
                   type: 'column'
             },
             title:{
-                  text: "Number of people who achieved the following scores"
+                  text: ""
             },
             xAxis: {
                   name: 'Score achieved',
@@ -591,7 +670,7 @@ $(document).ready(function(){
                   type: 'column'
             },
             title:{
-                  text: "Average Score by Age"
+                  text: ""
             },
             xAxis: {
                   name: 'Score achieved',
@@ -724,7 +803,7 @@ $(document).ready(function(){
                   type: 'column'
             },
             title:{
-                  text: "Average Score by Sex"
+                  text: ""
             },
             xAxis: {
                   name: 'Score achieved',
@@ -758,7 +837,7 @@ $(document).ready(function(){
                   type: 'column'
             },
             title:{
-                  text: "Average Score by Educational Attainment"
+                  text: ""
             },
             xAxis: {
                   name: 'Educational Attainment',
@@ -812,7 +891,7 @@ $(document).ready(function(){
                   type: 'column'
             },
             title:{
-                  text: "Average Score by Monthly Salary"
+                  text: ""
             },
             xAxis: {
                   name: 'Salary Range',
@@ -857,6 +936,15 @@ $(document).ready(function(){
             });
 
             //PERCEPTION GRAPH
+            var brown = [];
+            var base = '#795548';
+            var i;
+            for(i = 0; i<10; i++){
+                  brown.push(Highcharts.Color(base).brighten((i-3)/9).get());
+            }
+            Highcharts.setOptions({
+			colors: brown
+		});
             $('#perception_graph').highcharts({
                   chart: {
                   plotBackgroundColor: null,
@@ -865,7 +953,7 @@ $(document).ready(function(){
                   type: 'pie'
               },
               title: {
-                  text: 'People\'s perception on climate change'
+                  text: ''
               },
               plotOptions: {
                     pie: {
@@ -907,7 +995,17 @@ $(document).ready(function(){
 
 
 	$('#btn_back').click(function(){
-		window.location.href = 'portal.html';
+            $.ajax({
+                url: '/getRole',
+                method: 'GET',
+            }).done(function(data){
+                if(data == "USER"){
+                      window.location.href = 'portal.html';
+                }
+                if(data == "ADMIN"){
+                      window.location.href = 'admin.html';
+                }
+            });
 	});
 
 

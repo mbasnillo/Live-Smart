@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation.min.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/foundation-icons.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/page-style.css">
+	<link rel="stylesheet" type="text/css" href="../res/css/stats-page.css">
 	<link rel="stylesheet" type="text/css" href="../res/css/fonts.css">
 
 	<script type="text/javascript" src="../res/js/jquery-3.1.1.min.js"></script>
@@ -23,84 +24,83 @@
 
 	<div class="row">
 		<div class="small-12 columns" style="margin-top: 50px;" align="center">
-			<text class="prociono" style="font-size:40px">Statistics</text>
+			<p>
+				<text class="myriad-bold stat-title">General Statistics</text>
+			</p>
 		</div>
 	</div>
 
-	<hr />
-
-	<div class="row">
-		<div class="small-12 columns" align="center">
-			<text class="prociono" style="font-size:32px">General Demographic</text>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="small-6 columns">
-			<div id="age_graph">
-
-			</div>
-		</div>
-		<div class="small-6 columns">
-			<div id="sex_graph">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="small-6 columns">
-			<div id="education_graph">
-
-			</div>
-		</div>
-		<div class="small-6 columns">
-			<div id="salary_graph">
-
-			</div>
-		</div>
-	</div>
-
-	<hr />
-
-	<div class="row">
-		<div class="small-12 columns" align="center">
-			<text class="prociono" style="font-size:32px">Knowledge on Climate Change & Carbon Footprints</text>
-		</div>
-	</div>
-
-	<div class="row">
+	<div class="row" align="center">
 		<div class="small-12 columns">
-			<div id="score_overall">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Total number of users V.S. Number of users who have answered the survey</text>
+				</p>
+				<div id="gen_graph">
 
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="small-6 columns">
-			<div id="score_age">
+	<hr />
 
-			</div>
+	<div class="row" align="center">
+		<div class="small-12 columns" align="center">
+			<p>
+				<text class="myriad-bold stat-title">General Demographic</text>
+			</p>
 		</div>
+	</div>
 
-		<div class="small-6 columns">
-			<div id="score_sex">
+	<div class="row" align="center">
+		<div class="small-12 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Number of users grouped according to age</text>
+				</p>
+				<div id="age_graph">
 
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="small-6 columns">
-			<div id="score_education">
+	<div class="row" align="center">
+		<div class="small-12 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Number of users grouped according to sex</text>
+				</p>
+				<div id="sex_graph">
 
+				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="small-6 columns">
-			<div id="score_salary">
+	<div class="row" align="center">
+		<div class="small-12 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Number of users grouped according to education</text>
+				</p>
+				<div id="education_graph">
 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" align="center">
+		<div class="small-12 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Number of users grouped according to monthly salary</text>
+				</p>
+				<div id="salary_graph">
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -109,14 +109,92 @@
 
 	<div class="row">
 		<div class="small-12 columns" align="center">
-			<text class="prociono" style="font-size:32px">Perception towards Climate Change</text>
+			<p>
+				<text class="myriad-bold stat-title">Knowledge on Climate Change and Carbon Footprints</text>
+			</p>
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row" align="center">
 		<div class="small-12 columns">
-			<div id="perception_graph">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Number of users V.S. scores achieved</text>
+				</p>
+				<div id="score_overall">
 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" align="center">
+		<div class="small-6 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Average score by Age Group</text>
+				</p>
+				<div id="score_age">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="small-6 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Average score by Sex</text>
+				</p>
+				<div id="score_sex">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" align="center">
+		<div class="small-6 columns">
+			<div class=" callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Average score by Educational Attainment</text>
+				</p>
+				<div id="score_education">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="small-6 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Average score by Monthly Salary</text>
+				</p>
+				<div id="score_salary">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="small-12 columns" align="center">
+			<p>
+				<text class="myriad-bold stat-title">Perception towards Climate Change</text>
+			</p>
+		</div>
+	</div>
+
+	<div class="row" align="center">
+		<div class="small-12 columns">
+			<div class="callout large">
+				<p>
+					<text class="myriad-bold stat-subtitle">Number of users grouped according to their perception towards climate change</text>
+				</p>
+				<div id="perception_graph">
+
+				</div>
 			</div>
 		</div>
 	</div>

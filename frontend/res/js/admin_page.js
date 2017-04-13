@@ -9,21 +9,8 @@ $(document).ready(function(){
           }
       });
 
-	$.ajax({
-        url: '/getName',
-        method: 'POST',
-        success: writeName,
-        error: function(err){
-            return console.log(err, "Logout error");
-        }
-    });
-
-    function writeName(data){
-    	document.getElementById('name').innerHTML += '<b>' + data + '</b>';
-    }
-
 	$('#btn_viewAll').click(function(){
-		window.location.href = 'adminstats.html';
+		window.location.href = 'viewstats.html';
 	});
 
 	$('#btn_viewOne').click(function(){

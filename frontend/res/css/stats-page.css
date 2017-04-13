@@ -1,0 +1,14 @@
+.stat-title {
+  font-size: 36px;
+}
+
+.stat-subtitle {
+  font-size: 20px;
+}
+
+#age_graph, #sex_graph, #education_graph, #salary_graph {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%
+}
