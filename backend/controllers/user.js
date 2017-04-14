@@ -2,6 +2,18 @@ const db = require(__dirname + '/../lib/mysql');
 
 exports.computeCarbon = function (req, res, next){
   const username = req.session.username;
+  const food_score = req.body.food_score;
+  const travel_score = req.body.travel_score;
+  const home_score = req.body.home_score;
+  const footprint = req.body.footprint;
+
+  db.query("INSERT INTO USER_CARBON(username, food_score, travel_score, home_score, carbon_level, carbon_date) VALUES(?, ?, ?, ?, ?, NOW())", [username, food_score, travel_score, home_score, footprint], function(err, rows){
+    if(err){
+      return next(err);
+    }else{
+      return res.send(rows);
+    }
+  });
 }
 
 exports.answerSurvey = function (req, res, next){

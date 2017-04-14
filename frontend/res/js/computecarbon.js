@@ -8,7 +8,6 @@ $(document).ready(function(){
             window.location.href = '../index.html';
           }
       });
-
 	/* HIDDEN AREA */
 	$('#compute_section').hide();
 	$('#q_f1').hide();
@@ -149,12 +148,17 @@ $(document).ready(function(){
 
 
 	$('#btn_compute').click(function(){
+		var food_score = 0;
+		var travel_score = 0;
+		var home_score = 0;
 		for(var i = 1; i<=4; i++){
       var question = "qf" + i;
       var res = $('input[name='+question+']:checked').val();
       if(!res){
         return alertify.notify("ERROR: One or more food question/s was not answered!", 'night', 2, function(){ });
       }
+			res = res * 1;
+			food_score += res;
     }
 		for(var i = 1; i<=5; i++){
       var question = "qt" + i;
@@ -162,6 +166,8 @@ $(document).ready(function(){
       if(!res){
         return alertify.notify("ERROR: One or more travel question/s was not answered!", 'night', 2, function(){ });
       }
+			res = res * 1;
+			travel_score += res;
     }
 		for(var i = 1; i<=4; i++){
       var question = "qh" + i;
@@ -169,8 +175,40 @@ $(document).ready(function(){
       if(!res){
         return alertify.notify("ERROR: One or more home question/s was not answered!", 'night', 2, function(){ });
       }
+			res = res * 1;
+			home_score += res;
     }
+
+		food_score = food_score / 10;
+		food_score *= 3;
+		food_score = Math.round(food_score);
+		travel_score = travel_score / 20;
+		travel_score *= 4;
+		travel_score = Math.round(travel_score);
+		home_score = home_score / 15;
+		home_score *= 3;
+		home_score = Math.round(home_score);
+		var footprint = food_score + travel_score + home_score;
+
+		$.ajax({
+			url: '/computeCarbon',
+			method: 'POST',
+			data: {
+				food_score: food_score,
+				travel_score: travel_score,
+				home_score: home_score,
+				footprint: footprint
+			},
+			success: goResult,
+			error: function(err){
+				return console.log(err);
+			}
+		});
 	});
+
+	function goResult(){
+		console.log("hurray");
+	}
 
 	$('#btn_back').click(function(){
 		window.location.href = 'portal.html';

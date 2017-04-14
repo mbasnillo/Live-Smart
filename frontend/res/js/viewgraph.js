@@ -18,7 +18,11 @@ $(document).ready(function(){
 		method: 'GET',
 	}).done(function(data){
 		var data2=[], i;
-		for(i=0; i<data.length; i++){
+		var max = 5;
+		if(data.length < max){
+			max = data.length;
+		}
+		for(i=0; i<max; i++){
 			var temp=[];
 			var date = Date.parse(data[i].carbon_date);
 			temp.push(date);
@@ -37,7 +41,7 @@ $(document).ready(function(){
 				type: 'line'
 			},
 			title: {
-				text: title_text
+				text: ""
 			},
 			xAxis: {
 				type: 'datetime',
@@ -52,7 +56,9 @@ $(document).ready(function(){
 				title: {
 					text: 'Carbon Footprint Level',
 				},
-				min: 0
+				min: 0,
+				max: 10,
+				tickInterval: 1
 			},
 			tooltip: {
 				headerFormat: '{point.x:%e. %b %Y}<br/>',
