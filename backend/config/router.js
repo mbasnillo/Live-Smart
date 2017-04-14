@@ -29,6 +29,7 @@ module.exports = function(router){
 	//USER
 	router.post('/computeCarbon', user.computeCarbon);
 	router.put('/answerSurvey', user.answerSurvey);
+	router.get('/getLatestScore', user.getLatestScore);
 
 	return router;
 };

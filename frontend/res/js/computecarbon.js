@@ -207,7 +207,7 @@ $(document).ready(function(){
 	});
 
 	function goResult(){
-		console.log("hurray");
+		window.location.href = 'result.html';
 	}
 
 	$('#btn_back').click(function(){

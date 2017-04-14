@@ -16,6 +16,17 @@ exports.computeCarbon = function (req, res, next){
   });
 }
 
+exports.getLatestScore = function(req, res, next){
+  const username = req.session.username;
+
+  db.query("SELECT * from USER_CARBON WHERE username = ? ORDER BY carbon_date DESC LIMIT 1", [username], function(err, rows){
+    if(err){
+			return res.status(400).send("ERROR: Cannot retrieve data");
+		}
+    res.send(rows);
+  });
+}
+
 exports.answerSurvey = function (req, res, next){
   const username = req.session.username;
   const age = req.body.age;
