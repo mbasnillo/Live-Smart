@@ -11,7 +11,7 @@ $(document).ready(function(){
       });
 
   /********** ARROW AND DISPLAY PART **********/
-  $('#q_age').show();
+  $('#q_age').hide();
   $('#q_sex').hide();
   $('#q_educ').hide();
   $('#q_sal').hide();
@@ -33,7 +33,17 @@ $(document).ready(function(){
   $('#q_perc').hide();
   $('#submit_section').hide();
 
+  //INTRO
+  $('#right0').click(function(){
+    $('#q_start').hide();
+    $('#q_age').show();
+  });
+
   //AGE
+  $('#left1').click(function(){
+    $('#q_age').hide();
+    $('#q_start').show();
+  });
   $('#right1').click(function(){
     var age = $('#form_age').val();
     if(!age){
