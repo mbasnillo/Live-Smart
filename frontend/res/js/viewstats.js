@@ -1008,5 +1008,19 @@ $(document).ready(function(){
             });
 	});
 
+	$('#btn_back2').click(function(){
+            $.ajax({
+                url: '/getRole',
+                method: 'GET',
+            }).done(function(data){
+                if(data == "USER"){
+                      window.location.href = 'portal.html';
+                }
+                if(data == "ADMIN"){
+                      window.location.href = 'admin.html';
+                }
+            });
+	});
+
 
 });
