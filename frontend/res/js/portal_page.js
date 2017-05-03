@@ -22,6 +22,10 @@ $(document).ready(function(){
     	document.getElementById('name').innerHTML += '<b>' + data + '</b>';
     }
 
+	$('#btn_know').click(function(){
+		window.location.href = 'resources.html';
+	});
+
 	$('#btn_viewAll').click(function(){
 		window.location.href = 'viewstats.html';
 	});

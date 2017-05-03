@@ -32,23 +32,23 @@ $(document).ready(function(){
     }
 
     if(food_score == travel_score && food_score == home_score){
-      $('#suggestion').html("Work on travel");
+      $('#suggestion').html("Try looking into your travel habits and start making changes there.");
     }else{
       if(food_score > travel_score){
         if(food_score > home_score){
           //food is highest
-          $('#suggestion').html("Work on food");
+          $('#suggestion').html("Maybe you can start looking into adding some changes to your food intake.");
         }else{
           //home is highest
-          $('#suggestion').html("Work on home");
+          $('#suggestion').html("Is your house too big or do you own way too many gadgets? Maybe you can start by turning off unused appliances.");
         }
       }else{
         if(travel_score > home_score){
           //travel is highest
-          $('#suggestion').html("Work on travel");
+          $('#suggestion').html("Try looking into your travel habits and start making changes there.");
         }else{
           //home is highest
-          $('#suggestion').html("Work on home");
+          $('#suggestion').html("Is your house too big or do you own way too many gadgets? Maybe you can start by turning off unused appliances.");
         }
       }
     }
