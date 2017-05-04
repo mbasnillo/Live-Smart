@@ -33,22 +33,27 @@ $(document).ready(function(){
 
     if(food_score == travel_score && food_score == home_score){
       $('#suggestion').html("Try looking into your travel habits and start making changes there.");
+      $('#link').html("<a href='http://shrinkthatfootprint.com/shrink-your-travel-footprint'>Check out this link for more details!</a>");
     }else{
       if(food_score > travel_score){
         if(food_score > home_score){
           //food is highest
           $('#suggestion').html("Maybe you can start looking into adding some changes to your food intake.");
+          $('#link').html("<a href='http://shrinkthatfootprint.com/shrink-your-food-footprint'>Check out this link for more details!</a>");
         }else{
           //home is highest
           $('#suggestion').html("Is your house too big or do you own way too many gadgets? Maybe you can start by turning off unused appliances.");
+          $('#link').html("<a href='http://shrinkthatfootprint.com/shrink-your-housing-footprint'>Check out this link for more details!</a>");
         }
       }else{
         if(travel_score > home_score){
           //travel is highest
           $('#suggestion').html("Try looking into your travel habits and start making changes there.");
+          $('#link').html("<a href='http://shrinkthatfootprint.com/shrink-your-travel-footprint'>Check out this link for more details!</a>");
         }else{
           //home is highest
           $('#suggestion').html("Is your house too big or do you own way too many gadgets? Maybe you can start by turning off unused appliances.");
+          $('#link').html("<a href='http://shrinkthatfootprint.com/shrink-your-housing-footprint'>Check out this link for more details!</a>");
         }
       }
     }
